@@ -1,22 +1,24 @@
 import React from 'react';
-import { CodeCheckEngine } from '@code-check/core-engine';
-import { formatOutput } from '@code-check/shared';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import ProjectList from './pages/ProjectList';
+import RunDetail from './pages/RunDetail';
+import RulesConfig from './pages/RulesConfig';
 
 function App() {
-  const [result, setResult] = React.useState<string>('');
-
-  const handleAnalyze = () => {
-    const engine = new CodeCheckEngine();
-    const analysis = engine.analyze('sample code');
-    setResult(formatOutput(analysis));
-  };
-
   return (
-    <div className="App">
-      <h1>Code Check Web App</h1>
-      <button onClick={handleAnalyze}>Analyze Code</button>
-      {result && <p>{result}</p>}
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<ProjectList />} />
+          <Route
+            path="/projects/:projectId/runs/:runId"
+            element={<RunDetail />}
+          />
+          <Route path="/rules" element={<RulesConfig />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 }
 

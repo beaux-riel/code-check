@@ -1,6 +1,51 @@
-# Code Check Monorepo
+# Code Check - Advanced Static Code Analysis Tool
 
-A Turborepo-powered monorepo for the Code Check project with pnpm workspaces.
+A comprehensive, AI-powered code analysis platform that combines static analysis, dynamic testing instrumentation, and intelligent recommendations to help you maintain high-quality, secure, and performant codebases.
+
+## 🚀 Quick Start - Audit Your Codebase
+
+### Option 1: Using the CLI (Recommended)
+
+```bash
+# Install globally
+npm install -g @code-check/cli
+
+# Or use directly with npx
+npx @code-check/cli audit /path/to/your/project
+
+# With custom configuration
+npx @code-check/cli audit /path/to/your/project --config ./code-check.config.js
+```
+
+### Option 2: Using the Core Engine Directly
+
+```bash
+# Clone and setup
+git clone https://github.com/your-org/code-check.git
+cd code-check
+pnpm install
+pnpm build
+
+# Run analysis on your project
+node packages/cli/dist/index.js audit /path/to/your/project
+```
+
+### Option 3: Using as a Library
+
+```javascript
+import { CodeCheckEngine } from '@code-check/core-engine';
+import { OpenAIProvider } from '@code-check/shared';
+
+const engine = new CodeCheckEngine({
+  projectPath: '/path/to/your/project',
+  aiProvider: new OpenAIProvider(),
+  enabledPlugins: ['AST', 'Static', 'Dynamic', 'LLM'],
+  outputFormat: 'json',
+});
+
+const results = await engine.analyze();
+console.log('Analysis complete:', results);
+```
 
 ## Structure
 

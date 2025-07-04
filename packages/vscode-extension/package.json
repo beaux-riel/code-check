@@ -1,49 +1,246 @@
 {
   "name": "@code-check/vscode-extension",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "private": true,
   "displayName": "Code Check",
-  "description": "Code Check VSCode Extension",
+  "description": "Advanced code analysis and security auditing for VS Code",
   "publisher": "code-check",
   "engines": {
     "vscode": "^1.74.0"
   },
   "categories": [
+    "Linters",
     "Other"
   ],
-  "activationEvents": [],
+  "activationEvents": [
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:python",
+    "onLanguage:java",
+    "onLanguage:csharp",
+    "onLanguage:go",
+    "onLanguage:rust",
+    "onLanguage:php",
+    "onLanguage:ruby",
+    "onCommand:code-check.startAudit"
+  ],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "code-check.helloWorld",
-        "title": "Hello World"
+        "command": "code-check.startAudit",
+        "title": "Start Code Audit",
+        "category": "Code Check",
+        "icon": "$(search)"
+      },
+      {
+        "command": "code-check.startFullAudit",
+        "title": "Start Full Project Audit",
+        "category": "Code Check",
+        "icon": "$(folder)"
+      },
+      {
+        "command": "code-check.startFileAudit",
+        "title": "Audit Current File",
+        "category": "Code Check",
+        "icon": "$(file)"
+      },
+      {
+        "command": "code-check.showMetrics",
+        "title": "Show Metrics Dashboard",
+        "category": "Code Check",
+        "icon": "$(dashboard)"
+      },
+      {
+        "command": "code-check.clearDiagnostics",
+        "title": "Clear All Diagnostics",
+        "category": "Code Check",
+        "icon": "$(clear-all)"
+      },
+      {
+        "command": "code-check.refreshMetrics",
+        "title": "Refresh Metrics",
+        "category": "Code Check",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "code-check.exportReport",
+        "title": "Export Audit Report",
+        "category": "Code Check",
+        "icon": "$(export)"
+      },
+      {
+        "command": "code-check.configureSettings",
+        "title": "Configure Code Check Settings",
+        "category": "Code Check",
+        "icon": "$(settings)"
       }
-    ]
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "code-check.startFileAudit",
+          "when": "editorFocus",
+          "group": "codecheck@1"
+        }
+      ],
+      "explorer/context": [
+        {
+          "command": "code-check.startAudit",
+          "when": "explorerResourceIsFolder",
+          "group": "codecheck@1"
+        },
+        {
+          "command": "code-check.startFileAudit",
+          "when": "explorerResourceIsFile",
+          "group": "codecheck@1"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "code-check.refreshMetrics",
+          "when": "view == codeCheckMetrics",
+          "group": "navigation"
+        },
+        {
+          "command": "code-check.exportReport",
+          "when": "view == codeCheckMetrics",
+          "group": "navigation"
+        }
+      ],
+      "commandPalette": [
+        {
+          "command": "code-check.startAudit",
+          "when": "workspaceFolderCount > 0"
+        },
+        {
+          "command": "code-check.startFullAudit",
+          "when": "workspaceFolderCount > 0"
+        },
+        {
+          "command": "code-check.startFileAudit",
+          "when": "editorIsOpen"
+        }
+      ]
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "codeCheckMetrics",
+          "name": "Code Check Metrics",
+          "when": "codeCheckExtensionActive",
+          "type": "webview"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "codecheck",
+          "title": "Code Check",
+          "icon": "$(shield)"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "Code Check",
+      "properties": {
+        "codeCheck.apiEndpoint": {
+          "type": "string",
+          "default": "http://localhost:3000",
+          "description": "API endpoint for Code Check backend"
+        },
+        "codeCheck.enableInlineDiagnostics": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable inline diagnostics in the editor"
+        },
+        "codeCheck.enableCodeLens": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable CodeLens for fix suggestions"
+        },
+        "codeCheck.diagnosticsLevel": {
+          "type": "string",
+          "enum": [
+            "error",
+            "warning",
+            "info"
+          ],
+          "default": "warning",
+          "description": "Minimum severity level for diagnostics"
+        },
+        "codeCheck.autoRunOnSave": {
+          "type": "boolean",
+          "default": false,
+          "description": "Automatically run audit on file save"
+        },
+        "codeCheck.maxConcurrentAudits": {
+          "type": "number",
+          "default": 3,
+          "description": "Maximum number of concurrent audit processes"
+        },
+        "codeCheck.excludePatterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [
+            "node_modules/**",
+            "dist/**",
+            "build/**",
+            "*.min.js"
+          ],
+          "description": "File patterns to exclude from auditing"
+        },
+        "codeCheck.enableTelemetry": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable telemetry data collection"
+        }
+      }
+    }
   },
   "scripts": {
     "build": "tsup src/extension.ts --format cjs --external vscode",
     "dev": "tsup src/extension.ts --format cjs --external vscode --watch",
     "lint": "eslint 'src/**/*.ts'",
     "typecheck": "tsc --noEmit",
-    "test": "vitest",
-    "clean": "rm -rf dist",
-    "package": "vsce package"
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "vitest",
+    "test:integration": "node ./dist/test/runTest.js",
+    "test:e2e": "node ./dist/test/runTest.js",
+    "test:coverage": "vitest --coverage",
+    "test:watch": "vitest --watch",
+    "coverage:report": "vitest --coverage --reporter=html",
+    "coverage:check": "vitest --coverage --passWithNoTests",
+    "clean": "rm -rf dist coverage",
+    "package": "vsce package",
+    "pretest": "npm run build"
   },
   "dependencies": {
     "@code-check/core-engine": "workspace:*",
-    "@code-check/shared": "workspace:*"
+    "@code-check/shared": "workspace:*",
+    "axios": "^1.6.0",
+    "ws": "^8.13.0",
+    "node-ipc": "^9.2.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@types/node": "^20.0.0",
     "@types/vscode": "^1.74.0",
+    "@types/ws": "^8.5.0",
     "@vscode/test-electron": "^2.3.0",
     "eslint": "^8.57.0",
     "tsup": "^8.0.0",
     "typescript": "^5.2.0",
     "vitest": "^1.0.0",
-    "vsce": "^2.15.0"
+    "vsce": "^2.15.0",
+    "@types/mocha": "^10.0.0",
+    "mocha": "^10.2.0",
+    "glob": "^8.1.0",
+    "@types/glob": "^8.1.0"
   }
 }

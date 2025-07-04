@@ -1,0 +1,15 @@
+{
+  "name": "test-project",
+  "version": "1.0.0",
+  "description": "Test project for CodeCheck CLI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "codecheck": "codecheck audit",
+    "codecheck:ci": "codecheck ci",
+    "codecheck:report": "codecheck report"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

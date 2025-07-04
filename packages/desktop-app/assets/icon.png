@@ -1,0 +1,7 @@
+# This is a placeholder for the app icon
+# In a real project, you would place your app icon files here:
+# - icon.png (for Linux)
+# - icon.ico (for Windows) 
+# - icon.icns (for macOS)
+
+# For now, this serves as a placeholder to prevent build errors

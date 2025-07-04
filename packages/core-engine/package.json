@@ -1,7 +1,7 @@
 {
   "name": "@code-check/core-engine",
-  "version": "0.0.0",
-  "private": true,
+  "version": "1.0.0",
+  "private": false,
   "type": "module",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -12,14 +12,33 @@
     }
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm --dts",
+    "build": "tsup src/index.ts --format esm --dts --external typescript",
     "dev": "tsup src/index.ts --format esm --dts --watch",
     "lint": "eslint 'src/**/*.ts'",
     "typecheck": "tsc --noEmit",
     "test": "vitest",
-    "clean": "rm -rf dist"
+    "test:unit": "vitest --testPathPattern=__tests__",
+    "test:integration": "vitest --testPathPattern=integration",
+    "test:e2e": "echo 'No E2E tests for core engine'",
+    "test:coverage": "vitest --coverage",
+    "test:watch": "vitest --watch",
+    "coverage:report": "vitest --coverage --reporter=html",
+    "coverage:check": "vitest --coverage --passWithNoTests",
+    "clean": "rm -rf dist coverage"
+  },
+  "dependencies": {
+    "@babel/parser": "^7.23.0",
+    "@babel/traverse": "^7.23.0",
+    "@babel/types": "^7.23.0",
+    "@code-check/shared": "workspace:*",
+    "eslint": "^8.57.0",
+    "glob": "^10.3.0",
+    "minimatch": "^9.0.0",
+    "typescript": "^5.2.0"
   },
   "devDependencies": {
+    "@types/babel__traverse": "^7.20.0",
+    "@types/eslint": "^8.56.0",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "eslint": "^8.57.0",

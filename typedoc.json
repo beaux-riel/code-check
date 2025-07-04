@@ -1,0 +1,76 @@
+{
+  "entryPoints": [
+    "packages/core-engine/src/index.ts",
+    "packages/shared/src/index.ts"
+  ],
+  "out": "docs/api",
+  "plugin": ["typedoc-plugin-markdown"],
+  "theme": "markdown",
+  "readme": "none",
+  "exclude": [
+    "**/*.test.ts",
+    "**/*.spec.ts",
+    "**/node_modules/**",
+    "**/dist/**"
+  ],
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "excludeInternal": true,
+  "categorizeByGroup": true,
+  "defaultCategory": "Other",
+  "categoryOrder": ["Core", "Shared", "CLI", "Types", "Utilities", "Other"],
+  "sort": ["source-order"],
+  "kindSortOrder": [
+    "Document",
+    "Project",
+    "Module",
+    "Namespace",
+    "Enum",
+    "Class",
+    "Interface",
+    "Constructor",
+    "Property",
+    "Method",
+    "Function",
+    "Accessor",
+    "Variable",
+    "TypeAlias"
+  ],
+  "visibilityFilters": {
+    "protected": false,
+    "private": false,
+    "inherited": true,
+    "external": false
+  },
+  "searchInComments": true,
+  "cleanOutputDir": true,
+  "includeVersion": true,
+  "gitRevision": "master",
+  "gitRemote": "origin",
+  "sourceLinkTemplate": "https://github.com/your-org/code-check/blob/{gitRevision}/{path}#L{line}",
+  "name": "Code Check API Documentation",
+  "includeHierarchySummary": true,
+  "groupOrder": [
+    "Functions",
+    "Classes",
+    "Interfaces",
+    "Type Aliases",
+    "Variables",
+    "Enumerations"
+  ],
+  "compilerOptions": {
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "downlevelIteration": true
+  },
+  "skipErrorChecking": true,
+  "validation": {
+    "notExported": false,
+    "invalidLink": false,
+    "notDocumented": false
+  }
+}

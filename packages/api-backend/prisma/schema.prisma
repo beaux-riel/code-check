@@ -1,0 +1,131 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id              String    @id @default(cuid())
+  name            String
+  path            String
+  description     String?
+  repositoryUrl   String?
+  createdAt       DateTime  @default(now())
+  updatedAt       DateTime  @updatedAt
+  
+  // Relationships
+  audits          Audit[]
+  
+  @@map("projects")
+}
+
+model Audit {
+  id              String      @id @default(cuid())
+  projectId       String
+  status          String      @default("PENDING")
+  startedAt       DateTime    @default(now())
+  completedAt     DateTime?
+  duration        Int?        // in milliseconds
+  errorMessage    String?
+  
+  // Configuration
+  enabledPlugins  String?     // JSON string of plugin names array
+  rulesets        String?     // JSON string of ruleset names array
+  configuration   String?     // JSON string of configuration
+  
+  // Results summary
+  totalFiles      Int         @default(0)
+  totalIssues     Int         @default(0)
+  errorCount      Int         @default(0)
+  warningCount    Int         @default(0)
+  infoCount       Int         @default(0)
+  
+  // Performance metrics
+  memoryUsage     Float?      // Peak memory usage in MB
+  cpuUsage        Float?      // Average CPU usage percentage
+  
+  // Relationships
+  project         Project     @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  issues          Issue[]
+  files           AuditFile[]
+  
+  @@map("audits")
+}
+
+model AuditFile {
+  id              String    @id @default(cuid())
+  auditId         String
+  filePath        String
+  fileSize        Int
+  language        String?
+  linesOfCode     Int       @default(0)
+  processedAt     DateTime  @default(now())
+  
+  // Analysis results
+  issueCount      Int       @default(0)
+  errorCount      Int       @default(0)
+  warningCount    Int       @default(0)
+  infoCount       Int       @default(0)
+  
+  // Code quality metrics
+  complexityScore Float?
+  maintainabilityIndex Float?
+  
+  // Relationships
+  audit           Audit     @relation(fields: [auditId], references: [id], onDelete: Cascade)
+  issues          Issue[]
+  
+  @@map("audit_files")
+}
+
+model Issue {
+  id              String        @id @default(cuid())
+  auditId         String
+  fileId          String?
+  
+  // Issue details
+  severity        String
+  message         String
+  rule            String?
+  category        String?
+  
+  // Location information
+  filePath        String
+  line            Int
+  column          Int
+  endLine         Int?
+  endColumn       Int?
+  
+  // Additional data
+  fixable         Boolean       @default(false)
+  suggestions     String?       // JSON string of suggestions array
+  codeSnippet     String?
+  
+  // Security-specific fields
+  cwe             String?       // Common Weakness Enumeration
+  cvss            Float?        // Common Vulnerability Scoring System
+  
+  // Relationships
+  audit           Audit         @relation(fields: [auditId], references: [id], onDelete: Cascade)
+  file            AuditFile?    @relation(fields: [fileId], references: [id], onDelete: SetNull)
+  
+  @@map("issues")
+}
+
+model AuditLog {
+  id              String    @id @default(cuid())
+  auditId         String?
+  level           String
+  message         String
+  timestamp       DateTime  @default(now())
+  source          String?   // Plugin name, stage, etc.
+  metadata        String?   // JSON string for additional context
+  
+  @@map("audit_logs")
+}

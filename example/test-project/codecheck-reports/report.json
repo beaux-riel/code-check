@@ -1,0 +1,162 @@
+{
+  "success": true,
+  "analysisId": "analysis-1751660012508-yp8ny7vv1",
+  "summary": {
+    "totalFiles": 5,
+    "analyzedFiles": 5,
+    "skippedFiles": 0,
+    "totalIssues": 0,
+    "issuesByLevel": {
+      "error": 0,
+      "warning": 0,
+      "info": 0
+    },
+    "executionTime": 13,
+    "status": "success",
+    "exitCode": 0
+  },
+  "schema": {
+    "$schema": "https://schemas.code-check.dev/analysis-result/v1.0.0",
+    "version": "1.0.0",
+    "timestamp": "2025-07-04T20:13:32.525Z",
+    "analysisId": "analysis-1751660012508-yp8ny7vv1",
+    "configuration": {
+      "projectPath": ".",
+      "includedFiles": ["**/*.ts", "**/*.js"],
+      "excludedFiles": ["**/node_modules/**", "**/dist/**"],
+      "enabledPlugins": ["FileDiscoveryPlugin", "ASTAnalysisPlugin"],
+      "rulesets": ["typescript-recommended"],
+      "severityConfig": {
+        "thresholds": [
+          {
+            "level": "error",
+            "maxCount": 0,
+            "failOnExceed": true
+          },
+          {
+            "level": "warning",
+            "maxCount": 10,
+            "failOnExceed": false
+          },
+          {
+            "level": "info",
+            "maxCount": 50,
+            "failOnExceed": false
+          }
+        ]
+      }
+    },
+    "summary": {
+      "totalFiles": 5,
+      "analyzedFiles": 5,
+      "skippedFiles": 0,
+      "totalIssues": 0,
+      "issuesByLevel": {
+        "error": 0,
+        "warning": 0,
+        "info": 0
+      },
+      "executionTime": 13,
+      "status": "success",
+      "exitCode": 0
+    },
+    "files": [
+      {
+        "path": "/Users/beauxwalton/code-check/example/test-project/codecheck-reports/AUDIT_RESULTS.md",
+        "size": 0,
+        "lastModified": "2025-07-04T20:13:32.525Z",
+        "language": "Unknown",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/Users/beauxwalton/code-check/example/test-project/codecheck-reports/report.json",
+        "size": 0,
+        "lastModified": "2025-07-04T20:13:32.525Z",
+        "language": "Unknown",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/Users/beauxwalton/code-check/example/test-project/codecheck.config.ts",
+        "size": 0,
+        "lastModified": "2025-07-04T20:13:32.525Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/Users/beauxwalton/code-check/example/test-project/package.json",
+        "size": 0,
+        "lastModified": "2025-07-04T20:13:32.525Z",
+        "language": "Unknown",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/Users/beauxwalton/code-check/example/test-project/src/index.ts",
+        "size": 0,
+        "lastModified": "2025-07-04T20:13:32.525Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      }
+    ],
+    "issues": [],
+    "metrics": {
+      "performance": {
+        "totalExecutionTime": 13,
+        "fileDiscoveryTime": 100,
+        "analysisTime": -87,
+        "reportGenerationTime": 50
+      },
+      "quality": {
+        "codeQualityScore": 100,
+        "maintainabilityIndex": 85,
+        "technicalDebt": 0
+      },
+      "security": {
+        "vulnerabilityCount": 0,
+        "riskLevel": "low",
+        "securityScore": 85
+      },
+      "complexity": {
+        "averageComplexity": 5,
+        "maxComplexity": 15,
+        "complexityDistribution": [
+          {
+            "range": "1-5",
+            "count": 20
+          },
+          {
+            "range": "6-10",
+            "count": 15
+          },
+          {
+            "range": "11-15",
+            "count": 5
+          }
+        ]
+      }
+    },
+    "plugins": [],
+    "recommendations": []
+  },
+  "duration": 13,
+  "errors": []
+}
