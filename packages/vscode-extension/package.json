@@ -1,0 +1,49 @@
+{
+  "name": "@code-check/vscode-extension",
+  "version": "0.0.0",
+  "private": true,
+  "displayName": "Code Check",
+  "description": "Code Check VSCode Extension",
+  "publisher": "code-check",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "code-check.helloWorld",
+        "title": "Hello World"
+      }
+    ]
+  },
+  "scripts": {
+    "build": "tsup src/extension.ts --format cjs --external vscode",
+    "dev": "tsup src/extension.ts --format cjs --external vscode --watch",
+    "lint": "eslint 'src/**/*.ts'",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest",
+    "clean": "rm -rf dist",
+    "package": "vsce package"
+  },
+  "dependencies": {
+    "@code-check/core-engine": "workspace:*",
+    "@code-check/shared": "workspace:*"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@types/node": "^20.0.0",
+    "@types/vscode": "^1.74.0",
+    "@vscode/test-electron": "^2.3.0",
+    "eslint": "^8.57.0",
+    "tsup": "^8.0.0",
+    "typescript": "^5.2.0",
+    "vitest": "^1.0.0",
+    "vsce": "^2.15.0"
+  }
+}
