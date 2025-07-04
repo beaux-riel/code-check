@@ -19,7 +19,9 @@ export class BackendManager {
   async start(): Promise<boolean> {
     try {
       // Get an available port
-      this.port = await getPort({ port: getPort.makeRange(3001, 3999) });
+      this.port = await getPort({
+        port: [3001, 3002, 3003, 3004, 3005, 3006, 3007, 3008, 3009, 3010],
+      });
 
       // Path to the backend executable
       const backendPath = this.getBackendPath();
@@ -138,9 +140,14 @@ export class BackendManager {
   private async checkHealth(): Promise<boolean> {
     try {
       const fetch = (await import('node-fetch')).default;
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 5000);
+
       const response = await fetch(`http://localhost:${this.port}/api/health`, {
-        timeout: 5000,
+        signal: controller.signal,
       });
+
+      clearTimeout(timeoutId);
       return response.ok;
     } catch (error) {
       return false;
