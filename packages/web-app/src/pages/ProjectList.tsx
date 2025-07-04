@@ -42,7 +42,7 @@ import { Project } from '../types';
 const ProjectList: React.FC = () => {
   const navigate = useNavigate();
   const toast = useToast();
-  const { projects, loading, error, createProject, deleteProject } =
+  const { projects, loading, error, createProject, deleteProject, refetch } =
     useProjects();
   const { subscribe, unsubscribe } = useWebSocket();
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -167,8 +167,19 @@ const ProjectList: React.FC = () => {
     return (
       <Alert status="error">
         <AlertIcon />
-        <AlertTitle>Error!</AlertTitle>
-        <AlertDescription>{error}</AlertDescription>
+        <Box flex="1">
+          <AlertTitle>Cannot connect to API server!</AlertTitle>
+          <AlertDescription>{error}</AlertDescription>
+        </Box>
+        <Button
+          colorScheme="red"
+          variant="outline"
+          size="sm"
+          onClick={refetch}
+          ml={4}
+        >
+          Retry
+        </Button>
       </Alert>
     );
   }

@@ -203,15 +203,14 @@ cd code-check
 pnpm install
 pnpm build
 
-# 2. Start the API backend
-cd packages/api-backend
-npm start &
+# 2. Start both backend and frontend (recommended)
+npm run start:dev
 
-# 3. Start the web dashboard
-cd ../web-app
-npm start
+# Or manually start services:
+# cd packages/api-backend && npm start &
+# cd packages/web-app && npm start
 
-# 4. Access at http://localhost:3000
+# 3. Access at http://localhost:3000
 ```
 
 ### Option 4: Desktop App Development
@@ -497,6 +496,19 @@ git push origin feature/your-feature-name
 
 # 7. Create a pull request
 ```
+
+## 🚨 Troubleshooting
+
+Having issues getting started? Check our comprehensive troubleshooting guide:
+
+- **[🔧 TROUBLESHOOTING.md](./TROUBLESHOOTING.md)** - Common issues and solutions
+
+**Quick Fixes:**
+
+- ❌ **"Unexpected token '<'" error**: Backend not running → Run `npm run start:dev`
+- 🔴 **Connection status shows disconnected**: Check if API server is on port 3001
+- 🗄️ **Database errors**: Initialize with `cd packages/api-backend && npx prisma db push`
+- 🏗️ **Build failures**: Clean and rebuild with `npm run clean && npm install && npm run build`
 
 ## 🆘 Support & Community
 

@@ -9,21 +9,51 @@ class ApiService {
   ): Promise<T> {
     const url = `${API_BASE_URL}${endpoint}`;
 
-    const response = await fetch(url, {
-      headers: {
-        'Content-Type': 'application/json',
-        ...options.headers,
-      },
-      ...options,
-    });
+    try {
+      const response = await fetch(url, {
+        headers: {
+          'Content-Type': 'application/json',
+          ...options.headers,
+        },
+        ...options,
+      });
 
-    if (!response.ok) {
-      throw new Error(
-        `API request failed: ${response.status} ${response.statusText}`
-      );
+      if (!response.ok) {
+        // Try to get error message from response
+        let errorMessage = `API request failed: ${response.status} ${response.statusText}`;
+        try {
+          const errorData = await response.text();
+          if (errorData) {
+            // Check if it's HTML (error page) or JSON
+            if (errorData.trim().startsWith('<')) {
+              errorMessage +=
+                ' (Server returned HTML instead of JSON - check if API server is running)';
+            } else {
+              errorMessage += ` - ${errorData}`;
+            }
+          }
+        } catch {
+          // Ignore error when reading response body
+        }
+        throw new Error(errorMessage);
+      }
+
+      const contentType = response.headers.get('content-type');
+      if (contentType && contentType.includes('application/json')) {
+        return response.json();
+      } else {
+        throw new Error(
+          'Server returned non-JSON response. Check if API server is running on port 3001.'
+        );
+      }
+    } catch (error) {
+      if (error instanceof TypeError && error.message.includes('fetch')) {
+        throw new Error(
+          'Cannot connect to API server. Please ensure the backend is running on http://localhost:3001'
+        );
+      }
+      throw error;
     }
-
-    return response.json();
   }
 
   // Projects
@@ -33,6 +63,16 @@ class ApiService {
 
   async getProject(id: string): Promise<Project> {
     return this.request<Project>(`/projects/${id}`);
+  }
+
+  // Health check
+  async checkHealth(): Promise<boolean> {
+    try {
+      await this.request<{ status: string }>('/health');
+      return true;
+    } catch {
+      return false;
+    }
   }
 
   async createProject(

@@ -17,6 +17,7 @@
     "typecheck": "turbo run typecheck",
     "clean": "turbo run clean && rm -rf node_modules",
     "prepare": "husky install",
+    "start:dev": "./start-dev.sh",
     "desktop:dev": "cd packages/desktop-app && npm run electron:dev",
     "desktop:build": "cd packages/desktop-app && npm run build",
     "desktop:dist": "cd packages/desktop-app && npm run dist",
