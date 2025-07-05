@@ -118,7 +118,7 @@ jobs:
         run: pnpm run build --filter=@code-check/shared
 
       - name: Publish to Chromatic
-        uses: chromaui/action@v1
+        uses: chromaui/action@v13
         with:
           projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
           workingDir: packages/web-app
