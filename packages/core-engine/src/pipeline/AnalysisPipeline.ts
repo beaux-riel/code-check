@@ -274,8 +274,29 @@ export class AnalysisPipeline extends EventEmitter {
   }
 
   private initializePlugins(): void {
-    // Always add file discovery plugin
-    this.plugins.set('FileDiscovery', new FileDiscoveryPlugin());
+    // Always add file discovery plugin with configuration
+    const fileDiscoveryConfig = {
+      includedFiles: this.config.includePatterns ||
+        this.config.includedFiles || [
+          '**/*.ts',
+          '**/*.js',
+          '**/*.tsx',
+          '**/*.jsx',
+        ],
+      excludedFiles: this.config.excludePatterns ||
+        this.config.excludedFiles || [
+          '**/node_modules/**',
+          '**/dist/**',
+          '**/build/**',
+          '**/.git/**',
+          '**/coverage/**',
+        ],
+      maxFileSize: this.config.maxFileSize || 10 * 1024 * 1024,
+    };
+    this.plugins.set(
+      'FileDiscovery',
+      new FileDiscoveryPlugin(fileDiscoveryConfig)
+    );
 
     // Add other plugins based on configuration
     const enabledPlugins = this.config.enabledPlugins || [
@@ -414,17 +435,42 @@ export class AnalysisPipeline extends EventEmitter {
   }
 
   private analyzeFiles(files: string[]): AnalyzedFile[] {
-    return files.map((file) => ({
-      path: file,
-      size: 0, // Would need to read file stats
-      lastModified: new Date().toISOString(),
-      language: this.detectLanguage(file),
-      encoding: 'utf-8',
-      linesOfCode: 0, // Would need to count lines
-      issueCount: 0, // Would need to count issues for this file
-      plugins: Array.from(this.plugins.keys()),
-      processingTime: 0,
-    }));
+    return files.map((file) => {
+      try {
+        const fs = require('fs');
+        const stats = fs.statSync(file);
+        const content = fs.readFileSync(file, 'utf-8');
+        const lines = content.split('\n');
+        const linesOfCode = lines.filter(
+          (line: string) => line.trim().length > 0
+        ).length;
+
+        return {
+          path: file,
+          size: stats.size,
+          lastModified: stats.mtime.toISOString(),
+          language: this.detectLanguage(file),
+          encoding: 'utf-8',
+          linesOfCode,
+          issueCount: 0, // Will be updated after analysis
+          plugins: Array.from(this.plugins.keys()),
+          processingTime: 0,
+        };
+      } catch (error) {
+        // Fallback for files that can't be read
+        return {
+          path: file,
+          size: 0,
+          lastModified: new Date().toISOString(),
+          language: this.detectLanguage(file),
+          encoding: 'utf-8',
+          linesOfCode: 0,
+          issueCount: 0,
+          plugins: Array.from(this.plugins.keys()),
+          processingTime: 0,
+        };
+      }
+    });
   }
 
   private detectLanguage(file: string): string {
