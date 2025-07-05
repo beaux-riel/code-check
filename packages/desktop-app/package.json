@@ -43,9 +43,9 @@
     "helmet": "^7.0.0",
     "compression": "^1.7.4",
     "ws": "^8.13.0",
-    "prisma": "^5.0.0",
+    "prisma": "^6.11.1",
     "@prisma/client": "^5.0.0",
-    "uuid": "^9.0.0",
+    "uuid": "^11.1.0",
     "zod": "^3.22.0",
     "dotenv": "^16.3.0",
     "morgan": "^1.10.0",
@@ -82,7 +82,7 @@
     "vite": "^5.0.0",
     "wait-on": "^7.2.0",
     "electron-debug": "^3.2.0",
-    "electron-devtools-installer": "^3.2.0"
+    "electron-devtools-installer": "^4.0.0"
   },
   "build": {
     "appId": "com.codecheck.desktop",

@@ -19,6 +19,9 @@ const config: CodeCheckConfig = {
     'src/**/*.{js,jsx,ts,tsx}',
     'lib/**/*.{js,jsx,ts,tsx}',
     'app/**/*.{js,jsx,ts,tsx}',
+    'packages/*/src/**/*.{js,jsx,ts,tsx}',
+    'packages/*/lib/**/*.{js,jsx,ts,tsx}',
+    '*.{js,jsx,ts,tsx}',
   ],
   exclude: [
     'node_modules/**',
