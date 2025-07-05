@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@code-check/shared": "workspace:*",
-    "commander": "^11.0.0",
+    "commander": "^14.0.0",
     "glob": "^10.3.10",
     "minimatch": "^10.0.3",
     "ws": "^8.14.2",
