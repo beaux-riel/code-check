@@ -8,15 +8,21 @@ import * as dotenv from 'dotenv';
 import morgan from 'morgan';
 import rateLimit from 'express-rate-limit';
 import auditRoutes from './routes/auditRoutes';
+import projectRoutes from './routes/projectRoutes';
+import ruleRoutes from './routes/ruleRoutes';
 import { initializeWebSocketServer } from './websocket/websocketServer';
 import { errorHandler, notFoundHandler } from './middleware/errorHandler';
 import { PrismaClient } from '@prisma/client';
+import { EventEmitter } from 'events';
 
 // Load environment variables from .env file
 dotenv.config();
 
 // Create a new Prisma Client instance
 const prisma = new PrismaClient();
+
+// Increase EventEmitter max listeners
+EventEmitter.defaultMaxListeners = 20;
 
 const app = express();
 const server = http.createServer(app);
@@ -46,6 +52,8 @@ app.get('/api/health', (req, res) => {
 
 // Routes
 app.use('/api/audits', auditRoutes(prisma));
+app.use('/api/projects', projectRoutes(prisma));
+app.use('/api/rules', ruleRoutes());
 
 // Error handling middleware (must be after routes)
 app.use('*', notFoundHandler);

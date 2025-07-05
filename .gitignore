@@ -36,3 +36,6 @@ coverage/
 
 # VS Code extension
 *.vsix
+
+# History
+.history/

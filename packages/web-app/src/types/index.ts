@@ -3,6 +3,7 @@ export interface Project {
   name: string;
   description: string;
   language: string;
+  path?: string;
   lastRun: string;
   status: 'running' | 'completed' | 'failed' | 'pending';
   runsCount: number;

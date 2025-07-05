@@ -37,7 +37,7 @@ trap cleanup SIGINT SIGTERM
 # Start API backend in background
 echo "🖥️  Starting API backend on port 3001..."
 cd packages/api-backend
-npm start &
+npm run start &
 BACKEND_PID=$!
 cd ../..
 
@@ -57,7 +57,7 @@ echo "✅ Backend started successfully"
 # Start frontend in background
 echo "🌐 Starting web frontend on port 3000..."
 cd packages/web-app
-npm start &
+npm run dev &
 FRONTEND_PID=$!
 cd ../..
 

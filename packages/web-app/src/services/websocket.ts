@@ -1,45 +1,76 @@
-import { io, Socket } from 'socket.io-client';
 import { WebSocketMessage } from '../types';
 
 class WebSocketService {
-  private socket: Socket | null = null;
+  private socket: WebSocket | null = null;
   private listeners: Map<string, Function[]> = new Map();
+  private reconnectAttempts = 0;
+  private maxReconnectAttempts = 5;
+  private reconnectDelay = 1000;
 
-  connect(url: string = 'http://localhost:3001'): void {
-    if (this.socket?.connected) {
+  connect(url: string = 'ws://localhost:3001'): void {
+    if (this.socket?.readyState === WebSocket.OPEN) {
       return;
     }
 
-    this.socket = io(url, {
-      transports: ['websocket'],
-      autoConnect: true,
-    });
+    try {
+      this.socket = new WebSocket(url);
 
-    this.socket.on('connect', () => {
-      console.log('WebSocket connected');
-      this.emit('connected', true);
-    });
+      this.socket.onopen = () => {
+        console.log('WebSocket connected');
+        this.reconnectAttempts = 0;
+        this.emit('connected', true);
+      };
 
-    this.socket.on('disconnect', () => {
-      console.log('WebSocket disconnected');
-      this.emit('connected', false);
-    });
+      this.socket.onclose = () => {
+        console.log('WebSocket disconnected');
+        this.emit('connected', false);
+        this.handleReconnect(url);
+      };
 
-    this.socket.on('message', (message: WebSocketMessage) => {
-      this.emit(message.type, message.data);
-    });
+      this.socket.onmessage = (event) => {
+        try {
+          const message: WebSocketMessage = JSON.parse(event.data);
+          this.emit(message.type, message.data);
+        } catch (error) {
+          console.error('Error parsing WebSocket message:', error);
+        }
+      };
 
-    this.socket.on('error', (error: Error) => {
-      console.error('WebSocket error:', error);
-      this.emit('error', error);
-    });
+      this.socket.onerror = (error) => {
+        console.error('WebSocket error:', error);
+        this.emit('error', new Error('WebSocket connection failed'));
+      };
+    } catch (error) {
+      console.error('Failed to create WebSocket connection:', error);
+      this.emit(
+        'error',
+        error instanceof Error ? error : new Error('WebSocket creation failed')
+      );
+    }
+  }
+
+  private handleReconnect(url: string): void {
+    if (this.reconnectAttempts < this.maxReconnectAttempts) {
+      this.reconnectAttempts++;
+      console.log(
+        `Attempting to reconnect (${this.reconnectAttempts}/${this.maxReconnectAttempts})...`
+      );
+
+      setTimeout(() => {
+        this.connect(url);
+      }, this.reconnectDelay * this.reconnectAttempts);
+    } else {
+      console.error('Max reconnection attempts reached');
+      this.emit('error', new Error('Failed to reconnect to WebSocket'));
+    }
   }
 
   disconnect(): void {
     if (this.socket) {
-      this.socket.disconnect();
+      this.socket.close();
       this.socket = null;
     }
+    this.reconnectAttempts = this.maxReconnectAttempts; // Prevent auto-reconnect
   }
 
   subscribe(event: string, callback: Function): () => void {
@@ -65,13 +96,17 @@ class WebSocketService {
   }
 
   send(event: string, data: any): void {
-    if (this.socket?.connected) {
-      this.socket.emit(event, data);
+    if (this.socket?.readyState === WebSocket.OPEN) {
+      const message = {
+        type: event,
+        data: data,
+      };
+      this.socket.send(JSON.stringify(message));
     }
   }
 
   isConnected(): boolean {
-    return this.socket?.connected || false;
+    return this.socket?.readyState === WebSocket.OPEN || false;
   }
 }
 

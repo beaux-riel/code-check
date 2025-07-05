@@ -2,7 +2,7 @@ import { Router } from 'express';
 import { z } from 'zod';
 import asyncHandler from 'express-async-handler';
 import { PrismaClient } from '@prisma/client';
-import { AuditService } from '../services/auditService';
+import { getSharedAuditService } from '../websocket/websocketServer';
 import {
   createAuditSchema,
   queryAuditsSchema,
@@ -12,7 +12,7 @@ import {
 
 function auditRoutes(prisma: PrismaClient): Router {
   const router = Router();
-  const auditService = new AuditService(prisma);
+  const auditService = getSharedAuditService(prisma);
 
   // Create a new audit
   router.post(
@@ -186,38 +186,6 @@ function auditRoutes(prisma: PrismaClient): Router {
       });
 
       return res.status(200).json({ success: true, data: files });
-    })
-  );
-
-  // Get projects
-  router.get(
-    '/projects',
-    asyncHandler(async (req, res) => {
-      const projects = await prisma.project.findMany({
-        include: {
-          _count: {
-            select: { audits: true },
-          },
-          audits: {
-            select: { startedAt: true },
-            orderBy: { startedAt: 'desc' },
-            take: 1,
-          },
-        },
-        orderBy: { updatedAt: 'desc' },
-      });
-
-      const projectsWithMetadata = projects.map((project) => ({
-        ...project,
-        auditCount: project._count.audits,
-        lastAuditAt: project.audits[0]?.startedAt || null,
-        audits: undefined,
-        _count: undefined,
-      }));
-
-      return res
-        .status(200)
-        .json({ success: true, data: projectsWithMetadata });
     })
   );
 

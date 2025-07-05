@@ -24,6 +24,7 @@ A provider-agnostic interface for working with AI services including OpenAI, Ant
 
 ### Anthropic
 
+- Claude 4 models (Sonnet, Opus)
 - Claude 3 models (Haiku, Sonnet, Opus)
 - Provider-specific temperature validation (0-1 range)
 - Anthropic-specific API headers and formatting

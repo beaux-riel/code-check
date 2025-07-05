@@ -3,11 +3,26 @@ import { PrismaClient } from '@prisma/client';
 import { AuditService } from '../services/auditService';
 import { AuditWebSocketMessage } from '../types/api';
 
+// Shared AuditService instance to prevent creating multiple instances
+let sharedAuditService: AuditService | null = null;
+
+// Export function to get shared audit service instance
+export function getSharedAuditService(prisma: PrismaClient): AuditService {
+  if (!sharedAuditService) {
+    sharedAuditService = new AuditService(prisma);
+  }
+  return sharedAuditService;
+}
+
 export function initializeWebSocketServer(
   wss: WebSocketServer,
   prisma: PrismaClient
 ): void {
-  const auditService = new AuditService(prisma);
+  // Use shared instance or create one if it doesn't exist
+  if (!sharedAuditService) {
+    sharedAuditService = new AuditService(prisma);
+  }
+  const auditService = sharedAuditService;
 
   wss.on('connection', (ws: WebSocket) => {
     console.log('WebSocket client connected');

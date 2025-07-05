@@ -40,7 +40,21 @@ class ApiService {
 
       const contentType = response.headers.get('content-type');
       if (contentType && contentType.includes('application/json')) {
-        return response.json();
+        const jsonResponse = await response.json();
+        // Handle wrapped API responses with { success: true, data: ... } format
+        if (
+          jsonResponse &&
+          typeof jsonResponse === 'object' &&
+          'success' in jsonResponse
+        ) {
+          if (jsonResponse.success && 'data' in jsonResponse) {
+            return jsonResponse.data;
+          } else {
+            throw new Error(jsonResponse.error || 'API request failed');
+          }
+        }
+        // Return direct response if not wrapped
+        return jsonResponse;
       } else {
         throw new Error(
           'Server returned non-JSON response. Check if API server is running on port 3001.'

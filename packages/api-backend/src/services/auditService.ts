@@ -15,6 +15,7 @@ export class AuditService extends EventEmitter {
 
   constructor(prisma: PrismaClient) {
     super();
+    this.setMaxListeners(20); // Increase max listeners for WebSocket connections
     this.prisma = prisma;
   }
 
