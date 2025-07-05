@@ -33,7 +33,7 @@
     "@code-check/shared": "workspace:*",
     "eslint": "^8.57.0",
     "glob": "^10.3.0",
-    "minimatch": "^9.0.0",
+    "minimatch": "^10.0.3",
     "typescript": "^5.2.0"
   },
   "devDependencies": {
