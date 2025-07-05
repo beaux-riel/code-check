@@ -1,8 +1,8 @@
 # Code Analysis Report
 
-**Generated:** 2025-07-04T21:55:49.379Z  
+**Generated:** 2025-07-05T05:13:50.789Z  
 **Project:** .  
-**Total Files:** 197  
+**Total Files:** 133  
 **Lines of Code:** 0
 
 ## Summary
@@ -22,12 +22,12 @@
 
 ### File Statistics
 
-- **Analyzed Files:** 197
+- **Analyzed Files:** 133
 - **Skipped Files:** 0
 - **Language Distribution:**
-  - Unknown: 83 files
   - TypeScript: 108 files
   - JavaScript: 6 files
+  - Unknown: 19 files
 
 ### Code Quality Metrics
 
@@ -41,21 +41,21 @@
 
 ## Performance Metrics
 
-- **Analysis Time:** 62ms
-- **File Processing Rate:** 3177.42 files/second
+- **Analysis Time:** 123ms
+- **File Processing Rate:** 1081.30 files/second
 
 ## Largest Files
 
-- CHANGELOG.md: 0.0KB
-- CONTRIBUTING.md: 0.0KB
-- DOCUMENTATION_AUDIT_CHECKLIST.md: 0.0KB
-- README.md: 0.0KB
-- REQUIREMENTS.md: 0.0KB
-- RULE_LIBRARY_IMPLEMENTATION.md: 0.0KB
-- SHARED_UTILITIES_SUMMARY.md: 0.0KB
 - codecheck.config.ts: 0.0KB
-- CICD_SETUP.md: 0.0KB
-- PROJECT_STRUCTURE.md: 0.0KB
+- codecheck.config.ts: 0.0KB
+- index.ts: 0.0KB
+- types.ts: 0.0KB
+- codecheck.config.ts: 0.0KB
+- index.ts: 0.0KB
+- index.ts: 0.0KB
+- errorHandler.ts: 0.0KB
+- auditRoutes.ts: 0.0KB
+- auditService.ts: 0.0KB
 
 ---
 

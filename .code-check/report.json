@@ -1,9 +1,9 @@
 {
   "success": true,
-  "analysisId": "analysis-1751666149312-noey3yecw",
+  "analysisId": "analysis-1751692430655-1yk9vy18l",
   "summary": {
-    "totalFiles": 197,
-    "analyzedFiles": 197,
+    "totalFiles": 133,
+    "analyzedFiles": 133,
     "skippedFiles": 0,
     "totalIssues": 0,
     "issuesByLevel": {
@@ -11,15 +11,15 @@
       "warning": 0,
       "info": 0
     },
-    "executionTime": 62,
+    "executionTime": 123,
     "status": "success",
     "exitCode": 0
   },
   "schema": {
     "$schema": "https://schemas.code-check.dev/analysis-result/v1.0.0",
     "version": "1.0.0",
-    "timestamp": "2025-07-04T21:55:49.379Z",
-    "analysisId": "analysis-1751666149312-noey3yecw",
+    "timestamp": "2025-07-05T05:13:50.789Z",
+    "analysisId": "analysis-1751692430655-1yk9vy18l",
     "configuration": {
       "projectPath": ".",
       "includedFiles": ["**/*.ts", "**/*.js"],
@@ -47,8 +47,8 @@
       }
     },
     "summary": {
-      "totalFiles": 197,
-      "analyzedFiles": 197,
+      "totalFiles": 133,
+      "analyzedFiles": 133,
       "skippedFiles": 0,
       "totalIssues": 0,
       "issuesByLevel": {
@@ -56,92 +56,15 @@
         "warning": 0,
         "info": 0
       },
-      "executionTime": 62,
+      "executionTime": 123,
       "status": "success",
       "exitCode": 0
     },
     "files": [
       {
-        "path": "/Users/beauxwalton/code-check/CHANGELOG.md",
+        "path": "/workspace/code-check/codecheck.config.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/CONTRIBUTING.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/DOCUMENTATION_AUDIT_CHECKLIST.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/README.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/REQUIREMENTS.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/RULE_LIBRARY_IMPLEMENTATION.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/SHARED_UTILITIES_SUMMARY.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/codecheck.config.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -150,97 +73,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/docs/CICD_SETUP.md",
+        "path": "/workspace/code-check/docs/examples/sample-projects/basic-typescript/codecheck.config.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/docs/PROJECT_STRUCTURE.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/docs/RELEASE_ANNOUNCEMENT.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/docs/RELEASE_SUMMARY.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/docs/TESTING.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/docs/USAGE_INSTRUCTIONS.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/docs/api/README.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/docs/examples/sample-projects/basic-typescript/README.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/docs/examples/sample-projects/basic-typescript/codecheck.config.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -249,9 +84,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/docs/examples/sample-projects/basic-typescript/src/index.ts",
+        "path": "/workspace/code-check/docs/examples/sample-projects/basic-typescript/src/index.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -260,9 +95,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/docs/examples/sample-projects/basic-typescript/src/utils/types.ts",
+        "path": "/workspace/code-check/docs/examples/sample-projects/basic-typescript/src/utils/types.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -271,64 +106,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/docs/guides/configuration.md",
+        "path": "/workspace/code-check/example/test-project/codecheck.config.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/docs/guides/getting-started.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/docs/guides/plugin-development.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/example/test-project/codecheck-reports/AUDIT_RESULTS.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/example/test-project/codecheck-reports/report.json",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/example/test-project/codecheck.config.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -337,20 +117,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/example/test-project/package.json",
+        "path": "/workspace/code-check/example/test-project/src/index.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/example/test-project/src/index.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -359,42 +128,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/package.json",
+        "path": "/workspace/code-check/packages/api-backend/src/index.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/api-backend/README.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/api-backend/package.json",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/api-backend/src/index.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -403,9 +139,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/api-backend/src/middleware/errorHandler.ts",
+        "path": "/workspace/code-check/packages/api-backend/src/middleware/errorHandler.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -414,9 +150,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/api-backend/src/routes/auditRoutes.ts",
+        "path": "/workspace/code-check/packages/api-backend/src/routes/auditRoutes.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -425,9 +161,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/api-backend/src/services/auditService.ts",
+        "path": "/workspace/code-check/packages/api-backend/src/services/auditService.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -436,9 +172,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/api-backend/src/types/api.ts",
+        "path": "/workspace/code-check/packages/api-backend/src/types/api.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -447,9 +183,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/api-backend/src/websocket/websocketServer.ts",
+        "path": "/workspace/code-check/packages/api-backend/src/websocket/websocketServer.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -458,42 +194,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/api-backend/tsconfig.json",
+        "path": "/workspace/code-check/packages/cli/src/bin.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/cli/README.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/cli/package.json",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/cli/src/bin.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -502,9 +205,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/cli/src/cli.ts",
+        "path": "/workspace/code-check/packages/cli/src/cli.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -513,9 +216,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/cli/src/index.ts",
+        "path": "/workspace/code-check/packages/cli/src/index.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -524,53 +227,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/cli/tsconfig.json",
+        "path": "/workspace/code-check/packages/core-engine/src/__tests__/analyzer.test.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/README.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/STATIC_ANALYSIS_PLUGINS.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/package.json",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/__tests__/analyzer.test.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -579,9 +238,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/config/CodeCheckConfig.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/config/CodeCheckConfig.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -590,9 +249,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/config/SeverityConfig.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/config/SeverityConfig.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -601,9 +260,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/engine.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/engine.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -612,9 +271,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/execution/WorkerThreadExecutor.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/execution/WorkerThreadExecutor.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -623,9 +282,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/execution/worker.js",
+        "path": "/workspace/code-check/packages/core-engine/src/execution/worker.js",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "JavaScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -634,9 +293,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/index.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/index.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -645,9 +304,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/instrumentation/CypressInstrumentedRunner.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/instrumentation/CypressInstrumentedRunner.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -656,9 +315,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/instrumentation/JestInstrumentedRunner.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/instrumentation/JestInstrumentedRunner.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -667,9 +326,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/instrumentation/TestInstrumentationEngine.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/instrumentation/TestInstrumentationEngine.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -678,9 +337,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/pipeline/AnalysisPipeline.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/pipeline/AnalysisPipeline.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -689,9 +348,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/plugins/ASTAnalysisPlugin.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/plugins/ASTAnalysisPlugin.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -700,9 +359,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/plugins/CodeMetricsPlugin.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/plugins/CodeMetricsPlugin.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -711,9 +370,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/plugins/DynamicRunnerPlugin.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/plugins/DynamicRunnerPlugin.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -722,9 +381,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/plugins/ESLintPlugin.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/plugins/ESLintPlugin.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -733,9 +392,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/plugins/FileDiscoveryPlugin.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/plugins/FileDiscoveryPlugin.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -744,9 +403,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/plugins/LLMReasoningPlugin.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/plugins/LLMReasoningPlugin.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -755,9 +414,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/plugins/NpmAuditPlugin.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/plugins/NpmAuditPlugin.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -766,9 +425,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/plugins/SnykPlugin.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/plugins/SnykPlugin.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -777,9 +436,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/plugins/StaticAnalysisOrchestrator.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/plugins/StaticAnalysisOrchestrator.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -788,9 +447,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/plugins/TypeScriptPlugin.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/plugins/TypeScriptPlugin.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -799,9 +458,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/registry/RuleRegistry.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/registry/RuleRegistry.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -810,9 +469,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/reports/ReportGenerator.ts",
+        "path": "/workspace/code-check/packages/core-engine/src/reports/ReportGenerator.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -821,9 +480,174 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/rules/README.md",
+        "path": "/workspace/code-check/packages/core-engine/src/rules/code-quality.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/core-engine/src/rules/design-patterns.ts",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.788Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/core-engine/src/rules/index.ts",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.788Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/core-engine/src/rules/performance.ts",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.788Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/core-engine/src/rules/reusability.ts",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.788Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/core-engine/src/rules/rule-library.ts",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.788Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/core-engine/src/rules/security.ts",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.788Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/core-engine/src/rules/types.ts",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.788Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/core-engine/src/schema/AnalysisResultSchema.ts",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.788Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/core-engine/src/types/index.ts",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.788Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/desktop-app/src/main/backend-manager.ts",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.788Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/desktop-app/src/main/main.ts",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.788Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/desktop-app/src/main/menu-builder.ts",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.788Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/desktop-app/src/main/ollama-manager.ts",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.788Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/desktop-app/src/main/preload.ts",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.788Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/desktop-app/src/renderer/App.tsx",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -832,119 +656,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/rules/code-quality.ts",
+        "path": "/workspace/code-check/packages/desktop-app/src/renderer/components/Layout.tsx",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/rules/design-patterns.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/rules/index.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/rules/performance.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/rules/reusability.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/rules/rule-library.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/rules/security.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/rules/types.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/schema/AnalysisResultSchema.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/src/types/index.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/core-engine/tsconfig.json",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -953,9 +667,42 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/IMPLEMENTATION.md",
+        "path": "/workspace/code-check/packages/desktop-app/src/renderer/hooks/useElectronAPI.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/desktop-app/src/renderer/hooks/useProjects.ts",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.788Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/desktop-app/src/renderer/hooks/useWebSocket.ts",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.788Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/desktop-app/src/renderer/main.tsx",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -964,9 +711,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/README.md",
+        "path": "/workspace/code-check/packages/desktop-app/src/renderer/pages/OllamaModels.tsx",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -975,9 +722,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/package.json",
+        "path": "/workspace/code-check/packages/desktop-app/src/renderer/pages/ProjectList.tsx",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -986,64 +733,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/main/backend-manager.ts",
+        "path": "/workspace/code-check/packages/desktop-app/src/renderer/pages/RulesConfig.tsx",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/main/main.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/main/menu-builder.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/main/ollama-manager.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/main/preload.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/renderer/App.tsx",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1052,9 +744,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/renderer/components/Layout.tsx",
+        "path": "/workspace/code-check/packages/desktop-app/src/renderer/pages/RunDetail.tsx",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1063,42 +755,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/renderer/hooks/useElectronAPI.ts",
+        "path": "/workspace/code-check/packages/desktop-app/src/renderer/pages/Settings.tsx",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/renderer/hooks/useProjects.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/renderer/hooks/useWebSocket.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/renderer/main.tsx",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1107,64 +766,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/renderer/pages/OllamaModels.tsx",
+        "path": "/workspace/code-check/packages/desktop-app/src/renderer/services/api.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/renderer/pages/ProjectList.tsx",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/renderer/pages/RulesConfig.tsx",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/renderer/pages/RunDetail.tsx",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/renderer/pages/Settings.tsx",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/renderer/services/api.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1173,9 +777,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/renderer/services/websocket.ts",
+        "path": "/workspace/code-check/packages/desktop-app/src/renderer/services/websocket.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1184,9 +788,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/renderer/types/index.ts",
+        "path": "/workspace/code-check/packages/desktop-app/src/renderer/types/index.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1195,9 +799,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/src/renderer/utils/mockData.ts",
+        "path": "/workspace/code-check/packages/desktop-app/src/renderer/utils/mockData.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1206,31 +810,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/tsconfig.json",
+        "path": "/workspace/code-check/packages/desktop-app/vite.config.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/tsconfig.main.json",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/desktop-app/vite.config.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1239,31 +821,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/dynamic-analysis/README.md",
+        "path": "/workspace/code-check/packages/dynamic-analysis/src/cypress/instrumentation.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/dynamic-analysis/package.json",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/dynamic-analysis/src/cypress/instrumentation.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1272,9 +832,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/dynamic-analysis/src/index.ts",
+        "path": "/workspace/code-check/packages/dynamic-analysis/src/index.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1283,9 +843,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/dynamic-analysis/src/jest/instrumentation.ts",
+        "path": "/workspace/code-check/packages/dynamic-analysis/src/jest/instrumentation.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1294,9 +854,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/dynamic-analysis/src/types.ts",
+        "path": "/workspace/code-check/packages/dynamic-analysis/src/types.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1305,20 +865,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/dynamic-analysis/tsconfig.json",
+        "path": "/workspace/code-check/packages/eslint-config/index.js",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/eslint-config/index.js",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "JavaScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1327,20 +876,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/eslint-config/package.json",
+        "path": "/workspace/code-check/packages/eslint-config/react.js",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/eslint-config/react.js",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "JavaScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1349,31 +887,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/shared/README.md",
+        "path": "/workspace/code-check/packages/shared/src/AIProviderConfig.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/shared/package.json",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/shared/src/AIProviderConfig.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1382,9 +898,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/shared/src/AIProviderFactory.ts",
+        "path": "/workspace/code-check/packages/shared/src/AIProviderFactory.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1393,20 +909,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/shared/src/AI_PROVIDER_README.md",
+        "path": "/workspace/code-check/packages/shared/src/IAIProvider.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/shared/src/IAIProvider.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1415,9 +920,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/shared/src/__tests__/AIProvider.test.ts",
+        "path": "/workspace/code-check/packages/shared/src/__tests__/AIProvider.test.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1426,9 +931,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/shared/src/__tests__/config.test.ts",
+        "path": "/workspace/code-check/packages/shared/src/__tests__/config.test.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1437,9 +942,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/shared/src/__tests__/helpers.test.ts",
+        "path": "/workspace/code-check/packages/shared/src/__tests__/helpers.test.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1448,9 +953,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/shared/src/config/index.ts",
+        "path": "/workspace/code-check/packages/shared/src/config/index.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1459,9 +964,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/shared/src/config/schema.ts",
+        "path": "/workspace/code-check/packages/shared/src/config/schema.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1470,9 +975,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/shared/src/errors/index.ts",
+        "path": "/workspace/code-check/packages/shared/src/errors/index.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1481,9 +986,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/shared/src/examples/ai-provider-usage.ts",
+        "path": "/workspace/code-check/packages/shared/src/examples/ai-provider-usage.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1492,9 +997,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/shared/src/helpers/index.ts",
+        "path": "/workspace/code-check/packages/shared/src/helpers/index.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1503,9 +1008,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/shared/src/index.ts",
+        "path": "/workspace/code-check/packages/shared/src/index.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1514,9 +1019,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/shared/src/logging/index.ts",
+        "path": "/workspace/code-check/packages/shared/src/logging/index.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.788Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1525,9 +1030,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/shared/src/types/index.ts",
+        "path": "/workspace/code-check/packages/shared/src/types/index.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1536,9 +1041,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/shared/src/utils.ts",
+        "path": "/workspace/code-check/packages/shared/src/utils.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1547,75 +1052,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/shared/tsconfig.json",
+        "path": "/workspace/code-check/packages/vscode-extension/src/api/ApiClient.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/typescript-config/base.json",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/typescript-config/package.json",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/typescript-config/react-library.json",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/vscode-extension/README.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/vscode-extension/package.json",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/vscode-extension/src/api/ApiClient.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1624,9 +1063,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/vscode-extension/src/audit/AuditManager.ts",
+        "path": "/workspace/code-check/packages/vscode-extension/src/audit/AuditManager.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1635,9 +1074,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/vscode-extension/src/codelens/CodeCheckCodeLensProvider.ts",
+        "path": "/workspace/code-check/packages/vscode-extension/src/codelens/CodeCheckCodeLensProvider.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1646,9 +1085,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/vscode-extension/src/config/ConfigurationManager.ts",
+        "path": "/workspace/code-check/packages/vscode-extension/src/config/ConfigurationManager.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1657,9 +1096,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/vscode-extension/src/diagnostics/DiagnosticsManager.ts",
+        "path": "/workspace/code-check/packages/vscode-extension/src/diagnostics/DiagnosticsManager.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1668,9 +1107,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/vscode-extension/src/extension.ts",
+        "path": "/workspace/code-check/packages/vscode-extension/src/extension.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1679,9 +1118,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/vscode-extension/src/lsp/LanguageServerManager.ts",
+        "path": "/workspace/code-check/packages/vscode-extension/src/lsp/LanguageServerManager.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1690,9 +1129,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/vscode-extension/src/statusbar/StatusBarManager.ts",
+        "path": "/workspace/code-check/packages/vscode-extension/src/statusbar/StatusBarManager.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1701,9 +1140,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/vscode-extension/src/telemetry/TelemetryManager.ts",
+        "path": "/workspace/code-check/packages/vscode-extension/src/telemetry/TelemetryManager.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1712,9 +1151,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/vscode-extension/src/test/runTest.ts",
+        "path": "/workspace/code-check/packages/vscode-extension/src/test/runTest.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1723,9 +1162,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/vscode-extension/src/test/suite/extension.test.ts",
+        "path": "/workspace/code-check/packages/vscode-extension/src/test/suite/extension.test.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1734,9 +1173,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/vscode-extension/src/test/suite/index.ts",
+        "path": "/workspace/code-check/packages/vscode-extension/src/test/suite/index.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1745,9 +1184,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/vscode-extension/src/webview/MetricsWebviewProvider.ts",
+        "path": "/workspace/code-check/packages/vscode-extension/src/webview/MetricsWebviewProvider.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1756,53 +1195,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/vscode-extension/tsconfig.json",
+        "path": "/workspace/code-check/packages/web-app/my-dashboard/eslint.config.js",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/DASHBOARD_FEATURES.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/README.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/my-dashboard/README.md",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/my-dashboard/eslint.config.js",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "JavaScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1811,9 +1206,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/my-dashboard/package.json",
+        "path": "/workspace/code-check/packages/web-app/my-dashboard/src/App.tsx",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1822,9 +1217,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/my-dashboard/src/App.tsx",
+        "path": "/workspace/code-check/packages/web-app/my-dashboard/src/main.tsx",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1833,20 +1228,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/my-dashboard/src/main.tsx",
+        "path": "/workspace/code-check/packages/web-app/my-dashboard/src/vite-env.d.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/my-dashboard/src/vite-env.d.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1855,9 +1239,31 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/my-dashboard/tsconfig.app.json",
+        "path": "/workspace/code-check/packages/web-app/my-dashboard/vite.config.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/web-app/playwright.config.ts",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.789Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/web-app/src/App.tsx",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1866,9 +1272,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/my-dashboard/tsconfig.json",
+        "path": "/workspace/code-check/packages/web-app/src/__tests__/integration/ProjectFlow.test.tsx",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1877,9 +1283,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/my-dashboard/tsconfig.node.json",
+        "path": "/workspace/code-check/packages/web-app/src/__tests__/unit/Layout.test.tsx",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1888,9 +1294,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/my-dashboard/vite.config.ts",
+        "path": "/workspace/code-check/packages/web-app/src/__tests__/unit/useWebSocket.test.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1899,9 +1305,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/package.json",
+        "path": "/workspace/code-check/packages/web-app/src/components/ConnectionStatus.tsx",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1910,20 +1316,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/playwright.config.ts",
+        "path": "/workspace/code-check/packages/web-app/src/components/Layout.tsx",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/src/App.tsx",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1932,9 +1327,31 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/src/__tests__/integration/ProjectFlow.test.tsx",
+        "path": "/workspace/code-check/packages/web-app/src/hooks/useProjects.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/web-app/src/hooks/useWebSocket.ts",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.789Z",
+        "language": "TypeScript",
+        "encoding": "utf-8",
+        "linesOfCode": 0,
+        "issueCount": 0,
+        "plugins": ["FileDiscovery"],
+        "processingTime": 0
+      },
+      {
+        "path": "/workspace/code-check/packages/web-app/src/main.tsx",
+        "size": 0,
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1943,9 +1360,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/src/__tests__/unit/Layout.test.tsx",
+        "path": "/workspace/code-check/packages/web-app/src/pages/ProjectList.tsx",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1954,20 +1371,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/src/__tests__/unit/useWebSocket.test.ts",
+        "path": "/workspace/code-check/packages/web-app/src/pages/RulesConfig.tsx",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/src/components/Layout.tsx",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -1976,31 +1382,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/src/hooks/useProjects.ts",
+        "path": "/workspace/code-check/packages/web-app/src/pages/RunDetail.tsx",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/src/hooks/useWebSocket.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/src/main.tsx",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -2009,42 +1393,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/src/pages/ProjectList.tsx",
+        "path": "/workspace/code-check/packages/web-app/src/services/api.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/src/pages/RulesConfig.tsx",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/src/pages/RunDetail.tsx",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/src/services/api.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -2053,9 +1404,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/src/services/websocket.ts",
+        "path": "/workspace/code-check/packages/web-app/src/services/websocket.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -2064,9 +1415,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/src/test-setup.ts",
+        "path": "/workspace/code-check/packages/web-app/src/test-setup.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -2075,9 +1426,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/src/types/index.ts",
+        "path": "/workspace/code-check/packages/web-app/src/types/index.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -2086,9 +1437,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/src/utils/mockData.ts",
+        "path": "/workspace/code-check/packages/web-app/src/utils/mockData.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -2097,9 +1448,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/tests/e2e/global-setup.ts",
+        "path": "/workspace/code-check/packages/web-app/tests/e2e/global-setup.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -2108,9 +1459,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/tests/e2e/global-teardown.ts",
+        "path": "/workspace/code-check/packages/web-app/tests/e2e/global-teardown.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -2119,9 +1470,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/tests/e2e/project-dashboard.spec.ts",
+        "path": "/workspace/code-check/packages/web-app/tests/e2e/project-dashboard.spec.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -2130,20 +1481,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/tsconfig.json",
+        "path": "/workspace/code-check/packages/web-app/vite.config.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/packages/web-app/vite.config.ts",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -2152,9 +1492,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/scripts/check-coverage.js",
+        "path": "/workspace/code-check/scripts/check-coverage.js",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "JavaScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -2163,31 +1503,9 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/src/server/package.json",
+        "path": "/workspace/code-check/tests/jest.config.js",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/src/server/tsconfig.json",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/tests/jest.config.js",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "JavaScript",
         "encoding": "utf-8",
         "linesOfCode": 0,
@@ -2196,32 +1514,10 @@
         "processingTime": 0
       },
       {
-        "path": "/Users/beauxwalton/code-check/tests/setup.ts",
+        "path": "/workspace/code-check/tests/setup.ts",
         "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
+        "lastModified": "2025-07-05T05:13:50.789Z",
         "language": "TypeScript",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/turbo.json",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
-        "encoding": "utf-8",
-        "linesOfCode": 0,
-        "issueCount": 0,
-        "plugins": ["FileDiscovery"],
-        "processingTime": 0
-      },
-      {
-        "path": "/Users/beauxwalton/code-check/typedoc.json",
-        "size": 0,
-        "lastModified": "2025-07-04T21:55:49.379Z",
-        "language": "Unknown",
         "encoding": "utf-8",
         "linesOfCode": 0,
         "issueCount": 0,
@@ -2232,9 +1528,9 @@
     "issues": [],
     "metrics": {
       "performance": {
-        "totalExecutionTime": 62,
+        "totalExecutionTime": 123,
         "fileDiscoveryTime": 100,
-        "analysisTime": -38,
+        "analysisTime": 23,
         "reportGenerationTime": 50
       },
       "quality": {
@@ -2269,6 +1565,6 @@
     "plugins": [],
     "recommendations": []
   },
-  "duration": 62,
+  "duration": 123,
   "errors": []
 }

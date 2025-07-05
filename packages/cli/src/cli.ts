@@ -621,19 +621,57 @@ async function loadConfiguration(configPath?: string): Promise<any> {
   const targetPath = configPath || defaultPath;
 
   if (await fs.pathExists(targetPath)) {
-    // In a real implementation, you'd dynamically import the config
-    // For now, return a default configuration
-    return {
-      projectPath: '.',
-      enabledPlugins: ['FileDiscoveryPlugin', 'ASTAnalysisPlugin'],
-      outputFormat: 'all',
-    };
+    try {
+      // For TypeScript config files, we need to compile and import them
+      // For now, let's use a simple approach and return config with proper patterns
+      return {
+        projectPath: '.',
+        enabledPlugins: ['FileDiscoveryPlugin', 'ASTAnalysisPlugin'],
+        outputFormat: 'all',
+        includePatterns: [
+          'src/**/*.{js,jsx,ts,tsx}',
+          'lib/**/*.{js,jsx,ts,tsx}',
+          'app/**/*.{js,jsx,ts,tsx}',
+          'packages/*/src/**/*.{js,jsx,ts,tsx}',
+          'packages/*/lib/**/*.{js,jsx,ts,tsx}',
+          '*.{js,jsx,ts,tsx}',
+        ],
+        excludePatterns: [
+          'node_modules/**',
+          'dist/**',
+          'build/**',
+          '*.min.js',
+          '*.d.ts',
+          'coverage/**',
+          '**/*.test.{js,jsx,ts,tsx}',
+          '**/*.spec.{js,jsx,ts,tsx}',
+        ],
+      };
+    } catch (error) {
+      console.warn('Failed to load configuration file, using defaults');
+    }
   }
 
   return {
     projectPath: '.',
     enabledPlugins: ['FileDiscoveryPlugin', 'ASTAnalysisPlugin'],
     outputFormat: 'all',
+    includePatterns: [
+      'src/**/*.{js,jsx,ts,tsx}',
+      'lib/**/*.{js,jsx,ts,tsx}',
+      'app/**/*.{js,jsx,ts,tsx}',
+      'packages/*/src/**/*.{js,jsx,ts,tsx}',
+      'packages/*/lib/**/*.{js,jsx,ts,tsx}',
+      '*.{js,jsx,ts,tsx}',
+    ],
+    excludePatterns: [
+      'node_modules/**',
+      'dist/**',
+      'build/**',
+      '*.min.js',
+      '*.d.ts',
+      'coverage/**',
+    ],
   };
 }
 
