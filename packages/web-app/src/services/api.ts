@@ -1,6 +1,6 @@
 import { Project, RunDetail, Rule, RuleCategory } from '../types';
 
-const API_BASE_URL = 'http://localhost:3001/api';
+const API_BASE_URL = 'http://localhost:12001/api';
 
 class ApiService {
   private async request<T>(

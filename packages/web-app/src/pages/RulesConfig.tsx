@@ -54,11 +54,25 @@ const RulesConfig: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedRuleType, setSelectedRuleType] = useState<string>('all');
   const [selectedRule, setSelectedRule] = useState<Rule | null>(null);
   const [ruleConfig, setRuleConfig] = useState<Record<string, any>>({});
+  const [newPatternRule, setNewPatternRule] = useState({
+    name: '',
+    description: '',
+    category: 'design-patterns',
+    type: 'pattern' as 'pattern' | 'anti-pattern',
+    patterns: [''],
+    severity: 'medium' as 'high' | 'medium' | 'low',
+  });
 
   const toast = useToast();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const {
+    isOpen: isPatternModalOpen,
+    onOpen: onPatternModalOpen,
+    onClose: onPatternModalClose,
+  } = useDisclosure();
   const cardBg = useColorModeValue('white', 'gray.800');
 
   useEffect(() => {
@@ -150,6 +164,103 @@ const RulesConfig: React.FC = () => {
     }
   };
 
+  const handleCreatePatternRule = async () => {
+    try {
+      const newRule: Omit<Rule, 'id'> = {
+        name: newPatternRule.name,
+        description: newPatternRule.description,
+        category: newPatternRule.category,
+        severity: newPatternRule.severity,
+        enabled: true,
+        fixable: false,
+        type: newPatternRule.type,
+        patterns: newPatternRule.patterns.filter((p) => p.trim()),
+        configuration: {},
+        examples: {
+          good: [],
+          bad: [],
+        },
+      };
+
+      // In a real implementation, this would call the API
+      // For now, we'll simulate adding it to the local state
+      const createdRule = { ...newRule, id: `pattern-${Date.now()}` } as Rule;
+
+      setRuleCategories((prev) => {
+        const categoryIndex = prev.findIndex(
+          (cat) => cat.id === newPatternRule.category
+        );
+        if (categoryIndex >= 0) {
+          const updatedCategories = [...prev];
+          updatedCategories[categoryIndex] = {
+            ...updatedCategories[categoryIndex],
+            rules: [...updatedCategories[categoryIndex].rules, createdRule],
+          };
+          return updatedCategories;
+        } else {
+          // Create new category if it doesn't exist
+          return [
+            ...prev,
+            {
+              id: newPatternRule.category,
+              name: newPatternRule.category
+                .replace('-', ' ')
+                .replace(/\b\w/g, (l) => l.toUpperCase()),
+              description: `${newPatternRule.type === 'pattern' ? 'Design patterns' : 'Anti-patterns'} rules`,
+              rules: [createdRule],
+            },
+          ];
+        }
+      });
+
+      setNewPatternRule({
+        name: '',
+        description: '',
+        category: 'design-patterns',
+        type: 'pattern',
+        patterns: [''],
+        severity: 'medium',
+      });
+
+      onPatternModalClose();
+
+      toast({
+        title: 'Pattern Rule Created',
+        description: `${newPatternRule.type === 'pattern' ? 'Pattern' : 'Anti-pattern'} rule "${newPatternRule.name}" has been created`,
+        status: 'success',
+        duration: 3000,
+      });
+    } catch (error) {
+      toast({
+        title: 'Error',
+        description: 'Failed to create pattern rule',
+        status: 'error',
+        duration: 3000,
+      });
+    }
+  };
+
+  const handleAddPattern = () => {
+    setNewPatternRule((prev) => ({
+      ...prev,
+      patterns: [...prev.patterns, ''],
+    }));
+  };
+
+  const handleRemovePattern = (index: number) => {
+    setNewPatternRule((prev) => ({
+      ...prev,
+      patterns: prev.patterns.filter((_, i) => i !== index),
+    }));
+  };
+
+  const handlePatternChange = (index: number, value: string) => {
+    setNewPatternRule((prev) => ({
+      ...prev,
+      patterns: prev.patterns.map((p, i) => (i === index ? value : p)),
+    }));
+  };
+
   const getSeverityColor = (severity: string) => {
     switch (severity) {
       case 'high':
@@ -172,7 +283,12 @@ const RulesConfig: React.FC = () => {
           rule.description.toLowerCase().includes(searchTerm.toLowerCase());
         const matchesCategory =
           selectedCategory === 'all' || category.id === selectedCategory;
-        return matchesSearch && matchesCategory;
+        const matchesType =
+          selectedRuleType === 'all' ||
+          (selectedRuleType === 'standard' &&
+            (!rule.type || rule.type === 'standard')) ||
+          rule.type === selectedRuleType;
+        return matchesSearch && matchesCategory && matchesType;
       }),
     }))
     .filter((category) => category.rules.length > 0);
@@ -217,42 +333,97 @@ const RulesConfig: React.FC = () => {
             Configure code analysis rules and their settings
           </Text>
         </VStack>
-        <Button onClick={fetchRules} size="sm">
-          Refresh
-        </Button>
+        <HStack spacing={2}>
+          <Button
+            onClick={onPatternModalOpen}
+            colorScheme="blue"
+            size="sm"
+            leftIcon={<InfoIcon />}
+          >
+            Create Pattern Rule
+          </Button>
+          <Button onClick={fetchRules} size="sm" variant="outline">
+            Refresh
+          </Button>
+        </HStack>
       </HStack>
 
       {/* Filters */}
       <Card bg={cardBg} mb={6}>
         <CardBody>
-          <HStack spacing={4}>
-            <Box flex={1}>
-              <InputGroup>
-                <InputLeftElement pointerEvents="none">
-                  <SearchIcon color="gray.300" />
-                </InputLeftElement>
-                <Input
-                  placeholder="Search rules..."
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
-              </InputGroup>
-            </Box>
-            <Box>
-              <Select
-                value={selectedCategory}
-                onChange={(e) => setSelectedCategory(e.target.value)}
-                w="200px"
-              >
-                <option value="all">All Categories</option>
-                {allCategories.map((category) => (
-                  <option key={category.id} value={category.id}>
-                    {category.name}
-                  </option>
-                ))}
-              </Select>
-            </Box>
-          </HStack>
+          <VStack spacing={4}>
+            <HStack spacing={4} w="full">
+              <Box flex={1}>
+                <InputGroup>
+                  <InputLeftElement pointerEvents="none">
+                    <SearchIcon color="gray.300" />
+                  </InputLeftElement>
+                  <Input
+                    placeholder="Search rules..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                  />
+                </InputGroup>
+              </Box>
+              <Box>
+                <Select
+                  value={selectedCategory}
+                  onChange={(e) => setSelectedCategory(e.target.value)}
+                  w="200px"
+                >
+                  <option value="all">All Categories</option>
+                  {allCategories.map((category) => (
+                    <option key={category.id} value={category.id}>
+                      {category.name}
+                    </option>
+                  ))}
+                </Select>
+              </Box>
+              <Box>
+                <Select
+                  value={selectedRuleType}
+                  onChange={(e) => setSelectedRuleType(e.target.value)}
+                  w="180px"
+                >
+                  <option value="all">All Types</option>
+                  <option value="standard">Standard Rules</option>
+                  <option value="pattern">Design Patterns</option>
+                  <option value="anti-pattern">Anti-Patterns</option>
+                </Select>
+              </Box>
+            </HStack>
+
+            <HStack spacing={4} w="full" justify="space-between">
+              <HStack spacing={6}>
+                <Text fontSize="sm" color="gray.600">
+                  <strong>Total Rules:</strong>{' '}
+                  {ruleCategories.reduce(
+                    (acc, cat) => acc + cat.rules.length,
+                    0
+                  )}
+                </Text>
+                <Text fontSize="sm" color="gray.600">
+                  <strong>Enabled:</strong>{' '}
+                  {ruleCategories.reduce(
+                    (acc, cat) =>
+                      acc + cat.rules.filter((r) => r.enabled).length,
+                    0
+                  )}
+                </Text>
+                <Text fontSize="sm" color="gray.600">
+                  <strong>Pattern Rules:</strong>{' '}
+                  {ruleCategories.reduce(
+                    (acc, cat) =>
+                      acc +
+                      cat.rules.filter(
+                        (r) => r.type === 'pattern' || r.type === 'anti-pattern'
+                      ).length,
+                    0
+                  )}
+                </Text>
+              </HStack>
+            </HStack>
+          </VStack>
         </CardBody>
       </Card>
 
@@ -322,6 +493,16 @@ const RulesConfig: React.FC = () => {
                             >
                               {rule.severity}
                             </Badge>
+                            {rule.type === 'pattern' && (
+                              <Badge colorScheme="blue" variant="outline">
+                                Pattern
+                              </Badge>
+                            )}
+                            {rule.type === 'anti-pattern' && (
+                              <Badge colorScheme="red" variant="outline">
+                                Anti-Pattern
+                              </Badge>
+                            )}
                             {rule.fixable && (
                               <Badge colorScheme="green" variant="outline">
                                 Auto-fixable
@@ -471,6 +652,180 @@ const RulesConfig: React.FC = () => {
               }
             >
               Save Configuration
+            </Button>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
+
+      {/* Create Pattern Rule Modal */}
+      <Modal
+        isOpen={isPatternModalOpen}
+        onClose={onPatternModalClose}
+        size="xl"
+      >
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>
+            <HStack>
+              <InfoIcon />
+              <Text>Create Pattern Rule</Text>
+            </HStack>
+          </ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <VStack spacing={4} align="stretch">
+              <FormControl>
+                <FormLabel>Rule Name</FormLabel>
+                <Input
+                  value={newPatternRule.name}
+                  onChange={(e) =>
+                    setNewPatternRule({
+                      ...newPatternRule,
+                      name: e.target.value,
+                    })
+                  }
+                  placeholder="e.g., Singleton Pattern Detection"
+                />
+              </FormControl>
+
+              <FormControl>
+                <FormLabel>Description</FormLabel>
+                <Textarea
+                  value={newPatternRule.description}
+                  onChange={(e) =>
+                    setNewPatternRule({
+                      ...newPatternRule,
+                      description: e.target.value,
+                    })
+                  }
+                  placeholder="Describe what this rule detects..."
+                  rows={3}
+                />
+              </FormControl>
+
+              <HStack spacing={4}>
+                <FormControl>
+                  <FormLabel>Rule Type</FormLabel>
+                  <Select
+                    value={newPatternRule.type}
+                    onChange={(e) =>
+                      setNewPatternRule({
+                        ...newPatternRule,
+                        type: e.target.value as 'pattern' | 'anti-pattern',
+                      })
+                    }
+                  >
+                    <option value="pattern">Design Pattern</option>
+                    <option value="anti-pattern">Anti-Pattern</option>
+                  </Select>
+                </FormControl>
+
+                <FormControl>
+                  <FormLabel>Severity</FormLabel>
+                  <Select
+                    value={newPatternRule.severity}
+                    onChange={(e) =>
+                      setNewPatternRule({
+                        ...newPatternRule,
+                        severity: e.target.value as 'high' | 'medium' | 'low',
+                      })
+                    }
+                  >
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                  </Select>
+                </FormControl>
+              </HStack>
+
+              <FormControl>
+                <FormLabel>Category</FormLabel>
+                <Select
+                  value={newPatternRule.category}
+                  onChange={(e) =>
+                    setNewPatternRule({
+                      ...newPatternRule,
+                      category: e.target.value,
+                    })
+                  }
+                >
+                  <option value="design-patterns">Design Patterns</option>
+                  <option value="anti-patterns">Anti-Patterns</option>
+                  <option value="architectural-patterns">
+                    Architectural Patterns
+                  </option>
+                  <option value="code-smells">Code Smells</option>
+                </Select>
+              </FormControl>
+
+              <FormControl>
+                <FormLabel>Code Patterns</FormLabel>
+                <Text fontSize="sm" color="gray.600" mb={2}>
+                  Define regex patterns or code snippets that this rule should
+                  detect
+                </Text>
+                <VStack spacing={2} align="stretch">
+                  {newPatternRule.patterns.map((pattern, index) => (
+                    <HStack key={index}>
+                      <Input
+                        value={pattern}
+                        onChange={(e) =>
+                          handlePatternChange(index, e.target.value)
+                        }
+                        placeholder="e.g., class.*implements.*Singleton|private static.*instance"
+                        fontFamily="mono"
+                        fontSize="sm"
+                      />
+                      {newPatternRule.patterns.length > 1 && (
+                        <Button
+                          size="sm"
+                          colorScheme="red"
+                          variant="ghost"
+                          onClick={() => handleRemovePattern(index)}
+                        >
+                          Remove
+                        </Button>
+                      )}
+                    </HStack>
+                  ))}
+                  <Button
+                    size="sm"
+                    variant="outline"
+                    onClick={handleAddPattern}
+                    alignSelf="flex-start"
+                  >
+                    Add Pattern
+                  </Button>
+                </VStack>
+              </FormControl>
+
+              <Alert status="info" borderRadius="md">
+                <InfoIcon />
+                <Box ml={2}>
+                  <Text fontSize="sm">
+                    <strong>Pattern Tips:</strong> Use regex patterns to match
+                    code structures. For example:{' '}
+                    <code>class.*extends.*Component</code> to detect React class
+                    components.
+                  </Text>
+                </Box>
+              </Alert>
+            </VStack>
+          </ModalBody>
+          <ModalFooter>
+            <Button variant="ghost" mr={3} onClick={onPatternModalClose}>
+              Cancel
+            </Button>
+            <Button
+              colorScheme="blue"
+              onClick={handleCreatePatternRule}
+              isDisabled={
+                !newPatternRule.name.trim() ||
+                !newPatternRule.description.trim() ||
+                !newPatternRule.patterns.some((p) => p.trim())
+              }
+            >
+              Create Rule
             </Button>
           </ModalFooter>
         </ModalContent>

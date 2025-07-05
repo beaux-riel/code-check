@@ -67,6 +67,14 @@ const ProjectDetail: React.FC = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [isStartingRun, setIsStartingRun] = useState(false);
+  const [currentRunProgress, setCurrentRunProgress] = useState<{
+    runId: string;
+    progress: number;
+    currentFile: string;
+    filesProcessed: number;
+    totalFiles: number;
+    status: string;
+  } | null>(null);
   const [editData, setEditData] = useState({
     name: '',
     description: '',
@@ -83,6 +91,14 @@ const ProjectDetail: React.FC = () => {
   useEffect(() => {
     const unsubscribeRunUpdate = subscribe('run_started', (data: any) => {
       if (data.projectId === projectId) {
+        setCurrentRunProgress({
+          runId: data.runId,
+          progress: 0,
+          currentFile: '',
+          filesProcessed: 0,
+          totalFiles: data.totalFiles || 0,
+          status: 'starting',
+        });
         toast({
           title: 'Run Started',
           description: 'Analysis has started for this project',
@@ -93,8 +109,26 @@ const ProjectDetail: React.FC = () => {
       }
     });
 
+    const unsubscribeRunProgress = subscribe('run_progress', (data: any) => {
+      if (data.projectId === projectId && data.runId) {
+        setCurrentRunProgress((prev) =>
+          prev
+            ? {
+                ...prev,
+                progress: data.progress || 0,
+                currentFile: data.currentFile || '',
+                filesProcessed: data.filesProcessed || 0,
+                totalFiles: data.totalFiles || prev.totalFiles,
+                status: data.status || 'running',
+              }
+            : null
+        );
+      }
+    });
+
     const unsubscribeRunComplete = subscribe('run_completed', (data: any) => {
       if (data.projectId === projectId) {
+        setCurrentRunProgress(null);
         toast({
           title: 'Run Completed',
           description: 'Analysis has completed successfully',
@@ -105,9 +139,24 @@ const ProjectDetail: React.FC = () => {
       }
     });
 
+    const unsubscribeRunFailed = subscribe('run_failed', (data: any) => {
+      if (data.projectId === projectId) {
+        setCurrentRunProgress(null);
+        toast({
+          title: 'Run Failed',
+          description: data.error || 'Analysis failed',
+          status: 'error',
+          duration: 5000,
+        });
+        fetchProjectData();
+      }
+    });
+
     return () => {
       unsubscribeRunUpdate();
+      unsubscribeRunProgress();
       unsubscribeRunComplete();
+      unsubscribeRunFailed();
     };
   }, [projectId, subscribe, toast]);
 
@@ -381,6 +430,87 @@ const ProjectDetail: React.FC = () => {
           </HStack>
         </CardHeader>
       </Card>
+
+      {/* Progress Indicator */}
+      {currentRunProgress && (
+        <Card mb={6} bg={cardBg} borderColor="blue.200" borderWidth="2px">
+          <CardHeader>
+            <HStack justify="space-between">
+              <VStack align="start" spacing={1}>
+                <HStack>
+                  <Spinner size="sm" color="blue.500" />
+                  <Heading size="md" color="blue.600">
+                    Analysis in Progress
+                  </Heading>
+                  <Badge colorScheme="blue">{currentRunProgress.status}</Badge>
+                </HStack>
+                <Text fontSize="sm" color="gray.600">
+                  Run ID: {currentRunProgress.runId.substring(0, 8)}...
+                </Text>
+              </VStack>
+              <Button
+                size="sm"
+                colorScheme="blue"
+                variant="outline"
+                onClick={() =>
+                  navigate(
+                    `/projects/${project?.id}/runs/${currentRunProgress.runId}`
+                  )
+                }
+              >
+                View Live Progress
+              </Button>
+            </HStack>
+          </CardHeader>
+          <CardBody pt={0}>
+            <VStack spacing={3} align="stretch">
+              <Box>
+                <HStack justify="space-between" mb={2}>
+                  <Text fontSize="sm" fontWeight="medium">
+                    Overall Progress
+                  </Text>
+                  <Text fontSize="sm" color="gray.600">
+                    {Math.round(currentRunProgress.progress)}%
+                  </Text>
+                </HStack>
+                <Progress
+                  value={currentRunProgress.progress}
+                  colorScheme="blue"
+                  size="lg"
+                  hasStripe
+                  isAnimated
+                />
+              </Box>
+
+              <HStack justify="space-between">
+                <VStack align="start" spacing={1}>
+                  <Text fontSize="sm" fontWeight="medium">
+                    Files Processed
+                  </Text>
+                  <Text fontSize="lg" fontWeight="bold">
+                    {currentRunProgress.filesProcessed} /{' '}
+                    {currentRunProgress.totalFiles}
+                  </Text>
+                </VStack>
+                <VStack align="end" spacing={1}>
+                  <Text fontSize="sm" fontWeight="medium">
+                    Current File
+                  </Text>
+                  <Text
+                    fontSize="sm"
+                    color="gray.600"
+                    textAlign="right"
+                    maxW="300px"
+                    isTruncated
+                  >
+                    {currentRunProgress.currentFile || 'Initializing...'}
+                  </Text>
+                </VStack>
+              </HStack>
+            </VStack>
+          </CardBody>
+        </Card>
+      )}
 
       {/* Tabs */}
       <Tabs>

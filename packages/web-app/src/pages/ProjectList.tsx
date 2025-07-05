@@ -32,6 +32,13 @@ import {
   Textarea,
   Select,
   useDisclosure,
+  Switch,
+  Tag,
+  TagLabel,
+  TagCloseButton,
+  Wrap,
+  WrapItem,
+  Divider,
 } from '@chakra-ui/react';
 import { AddIcon, SettingsIcon, DeleteIcon, ViewIcon } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router-dom';
@@ -51,6 +58,9 @@ const ProjectList: React.FC = () => {
     name: '',
     description: '',
     language: 'javascript',
+    path: '',
+    scanSubfolders: true,
+    excludePatterns: ['node_modules', '.git', 'dist', 'build'],
   });
 
   const cardBg = useColorModeValue('white', 'gray.800');
@@ -81,6 +91,8 @@ const ProjectList: React.FC = () => {
     };
   }, [subscribe, toast]);
 
+  const [newExcludePattern, setNewExcludePattern] = useState('');
+
   const handleCreateProject = async () => {
     try {
       await createProject({
@@ -90,7 +102,14 @@ const ProjectList: React.FC = () => {
         runsCount: 0,
         issuesCount: 0,
       });
-      setNewProject({ name: '', description: '', language: 'javascript' });
+      setNewProject({
+        name: '',
+        description: '',
+        language: 'javascript',
+        path: '',
+        scanSubfolders: true,
+        excludePatterns: ['node_modules', '.git', 'dist', 'build'],
+      });
       onClose();
       toast({
         title: 'Project Created',
@@ -105,6 +124,38 @@ const ProjectList: React.FC = () => {
         status: 'error',
         duration: 3000,
       });
+    }
+  };
+
+  const handleAddExcludePattern = () => {
+    if (
+      newExcludePattern.trim() &&
+      !newProject.excludePatterns.includes(newExcludePattern.trim())
+    ) {
+      setNewProject({
+        ...newProject,
+        excludePatterns: [
+          ...newProject.excludePatterns,
+          newExcludePattern.trim(),
+        ],
+      });
+      setNewExcludePattern('');
+    }
+  };
+
+  const handleRemoveExcludePattern = (pattern: string) => {
+    setNewProject({
+      ...newProject,
+      excludePatterns: newProject.excludePatterns.filter((p) => p !== pattern),
+    });
+  };
+
+  const handleSelectFolder = () => {
+    // In a real implementation, this would open a folder picker dialog
+    // For now, we'll use a simple prompt
+    const folderPath = prompt('Enter the folder path to scan:');
+    if (folderPath) {
+      setNewProject({ ...newProject, path: folderPath });
     }
   };
 
@@ -304,6 +355,7 @@ const ProjectList: React.FC = () => {
                   placeholder="Enter project name"
                 />
               </FormControl>
+
               <FormControl>
                 <FormLabel>Description</FormLabel>
                 <Textarea
@@ -317,6 +369,82 @@ const ProjectList: React.FC = () => {
                   placeholder="Enter project description"
                 />
               </FormControl>
+
+              <Divider />
+
+              <FormControl>
+                <FormLabel>Folder to Scan</FormLabel>
+                <HStack>
+                  <Input
+                    value={newProject.path}
+                    onChange={(e) =>
+                      setNewProject({ ...newProject, path: e.target.value })
+                    }
+                    placeholder="Select folder path"
+                    readOnly
+                  />
+                  <Button onClick={handleSelectFolder} size="sm">
+                    Browse
+                  </Button>
+                </HStack>
+                <Text fontSize="sm" color="gray.500" mt={1}>
+                  Choose the root folder to begin the code audit
+                </Text>
+              </FormControl>
+
+              <FormControl display="flex" alignItems="center">
+                <FormLabel htmlFor="scan-subfolders" mb="0">
+                  Scan subfolders
+                </FormLabel>
+                <Switch
+                  id="scan-subfolders"
+                  isChecked={newProject.scanSubfolders}
+                  onChange={(e) =>
+                    setNewProject({
+                      ...newProject,
+                      scanSubfolders: e.target.checked,
+                    })
+                  }
+                />
+              </FormControl>
+
+              <FormControl>
+                <FormLabel>Exclude Patterns</FormLabel>
+                <HStack>
+                  <Input
+                    value={newExcludePattern}
+                    onChange={(e) => setNewExcludePattern(e.target.value)}
+                    placeholder="Add pattern to exclude"
+                    onKeyPress={(e) => {
+                      if (e.key === 'Enter') {
+                        handleAddExcludePattern();
+                      }
+                    }}
+                  />
+                  <Button onClick={handleAddExcludePattern} size="sm">
+                    Add
+                  </Button>
+                </HStack>
+                <Wrap mt={2}>
+                  {newProject.excludePatterns.map((pattern) => (
+                    <WrapItem key={pattern}>
+                      <Tag size="sm" colorScheme="blue" variant="solid">
+                        <TagLabel>{pattern}</TagLabel>
+                        <TagCloseButton
+                          onClick={() => handleRemoveExcludePattern(pattern)}
+                        />
+                      </Tag>
+                    </WrapItem>
+                  ))}
+                </Wrap>
+                <Text fontSize="sm" color="gray.500" mt={1}>
+                  Folders and files matching these patterns will be excluded
+                  from the scan
+                </Text>
+              </FormControl>
+
+              <Divider />
+
               <FormControl>
                 <FormLabel>Language</FormLabel>
                 <Select
@@ -331,6 +459,7 @@ const ProjectList: React.FC = () => {
                   <option value="java">Java</option>
                   <option value="csharp">C#</option>
                   <option value="go">Go</option>
+                  <option value="auto">Auto-detect</option>
                 </Select>
               </FormControl>
             </VStack>
@@ -342,7 +471,7 @@ const ProjectList: React.FC = () => {
             <Button
               colorScheme="blue"
               onClick={handleCreateProject}
-              disabled={!newProject.name.trim()}
+              disabled={!newProject.name.trim() || !newProject.path.trim()}
             >
               Create
             </Button>

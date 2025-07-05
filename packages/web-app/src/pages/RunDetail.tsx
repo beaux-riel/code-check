@@ -81,6 +81,14 @@ const RunDetail: React.FC = () => {
   const [runDetail, setRunDetail] = useState<RunDetailType | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [liveProgress, setLiveProgress] = useState<{
+    progress: number;
+    currentFile: string;
+    filesProcessed: number;
+    totalFiles: number;
+    currentIssues: number;
+    estimatedTimeRemaining: number;
+  } | null>(null);
 
   const cardBg = useColorModeValue('white', 'gray.800');
 
@@ -107,21 +115,85 @@ const RunDetail: React.FC = () => {
   useEffect(() => {
     const unsubscribeProgress = subscribe('run_progress', (data: any) => {
       if (data.runId === runId) {
-        setRunDetail((prev) => (prev ? { ...prev, ...data } : null));
+        setLiveProgress({
+          progress: data.progress || 0,
+          currentFile: data.currentFile || '',
+          filesProcessed: data.filesProcessed || 0,
+          totalFiles: data.totalFiles || 0,
+          currentIssues: data.currentIssues || 0,
+          estimatedTimeRemaining: data.estimatedTimeRemaining || 0,
+        });
+
+        // Update run detail with latest metrics
+        setRunDetail((prev) =>
+          prev
+            ? {
+                ...prev,
+                metrics: {
+                  ...prev.metrics,
+                  processedFiles:
+                    data.filesProcessed || prev.metrics.processedFiles,
+                  totalFiles: data.totalFiles || prev.metrics.totalFiles,
+                  totalIssues: data.currentIssues || prev.metrics.totalIssues,
+                },
+              }
+            : null
+        );
+      }
+    });
+
+    const unsubscribeIssueFound = subscribe('issue_found', (data: any) => {
+      if (data.runId === runId) {
+        setRunDetail((prev) =>
+          prev
+            ? {
+                ...prev,
+                issues: [...prev.issues, data.issue],
+                metrics: {
+                  ...prev.metrics,
+                  totalIssues: prev.metrics.totalIssues + 1,
+                  [data.issue.type === 'error'
+                    ? 'errors'
+                    : data.issue.type === 'warning'
+                      ? 'warnings'
+                      : 'info']:
+                    prev.metrics[
+                      data.issue.type === 'error'
+                        ? 'errors'
+                        : data.issue.type === 'warning'
+                          ? 'warnings'
+                          : 'info'
+                    ] + 1,
+                },
+              }
+            : null
+        );
       }
     });
 
     const unsubscribeComplete = subscribe('run_completed', (data: any) => {
       if (data.runId === runId) {
+        setLiveProgress(null);
         setRunDetail((prev) =>
           prev ? { ...prev, status: 'completed', endTime: data.endTime } : null
         );
       }
     });
 
+    const unsubscribeFailed = subscribe('run_failed', (data: any) => {
+      if (data.runId === runId) {
+        setLiveProgress(null);
+        setRunDetail((prev) =>
+          prev ? { ...prev, status: 'failed', endTime: data.endTime } : null
+        );
+      }
+    });
+
     return () => {
       unsubscribeProgress();
+      unsubscribeIssueFound();
       unsubscribeComplete();
+      unsubscribeFailed();
     };
   }, [subscribe, runId]);
 
@@ -290,6 +362,77 @@ const RunDetail: React.FC = () => {
           </MenuList>
         </Menu>
       </HStack>
+
+      {/* Live Progress Indicator */}
+      {liveProgress && runDetail.status === 'running' && (
+        <Card mb={6} bg={cardBg} borderColor="blue.200" borderWidth="2px">
+          <CardHeader>
+            <HStack justify="space-between">
+              <HStack>
+                <Spinner size="sm" color="blue.500" />
+                <Heading size="md" color="blue.600">
+                  Live Progress
+                </Heading>
+                <Badge colorScheme="blue">Running</Badge>
+              </HStack>
+              <Text fontSize="sm" color="gray.600">
+                ETA:{' '}
+                {liveProgress.estimatedTimeRemaining > 0
+                  ? formatDuration(liveProgress.estimatedTimeRemaining * 1000)
+                  : 'Calculating...'}
+              </Text>
+            </HStack>
+          </CardHeader>
+          <CardBody pt={0}>
+            <VStack spacing={4} align="stretch">
+              <Box>
+                <HStack justify="space-between" mb={2}>
+                  <Text fontSize="sm" fontWeight="medium">
+                    Overall Progress
+                  </Text>
+                  <Text fontSize="sm" color="gray.600">
+                    {Math.round(liveProgress.progress)}%
+                  </Text>
+                </HStack>
+                <Progress
+                  value={liveProgress.progress}
+                  colorScheme="blue"
+                  size="lg"
+                  hasStripe
+                  isAnimated
+                />
+              </Box>
+
+              <SimpleGrid columns={{ base: 1, md: 3 }} spacing={4}>
+                <VStack align="start" spacing={1}>
+                  <Text fontSize="sm" fontWeight="medium">
+                    Files Processed
+                  </Text>
+                  <Text fontSize="xl" fontWeight="bold">
+                    {liveProgress.filesProcessed} / {liveProgress.totalFiles}
+                  </Text>
+                </VStack>
+                <VStack align="start" spacing={1}>
+                  <Text fontSize="sm" fontWeight="medium">
+                    Issues Found
+                  </Text>
+                  <Text fontSize="xl" fontWeight="bold" color="orange.500">
+                    {liveProgress.currentIssues}
+                  </Text>
+                </VStack>
+                <VStack align="start" spacing={1}>
+                  <Text fontSize="sm" fontWeight="medium">
+                    Current File
+                  </Text>
+                  <Text fontSize="sm" color="gray.600" isTruncated maxW="200px">
+                    {liveProgress.currentFile || 'Initializing...'}
+                  </Text>
+                </VStack>
+              </SimpleGrid>
+            </VStack>
+          </CardBody>
+        </Card>
+      )}
 
       {/* Metrics Overview */}
       <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={6} mb={6}>
