@@ -42,7 +42,7 @@ const DebugTest: React.FC = () => {
           <Text fontWeight="bold" mb={2}>
             Current Environment:
           </Text>
-          <Text>Development Mode: {process.env.NODE_ENV}</Text>
+          <Text>Development Mode: {import.meta.env.MODE}</Text>
           <Text>Timestamp: {new Date().toLocaleString()}</Text>
         </Box>
       </VStack>

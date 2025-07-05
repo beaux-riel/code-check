@@ -4,6 +4,8 @@ export interface Project {
   description: string;
   language: string;
   path?: string;
+  scanSubfolders?: boolean;
+  excludePatterns?: string[];
   lastRun: string;
   status: 'running' | 'completed' | 'failed' | 'pending';
   runsCount: number;
@@ -67,6 +69,12 @@ export interface Rule {
   enabled: boolean;
   fixable: boolean;
   configuration: Record<string, any>;
+  type?: 'standard' | 'pattern' | 'anti-pattern';
+  patterns?: string[];
+  examples?: {
+    good?: string[];
+    bad?: string[];
+  };
 }
 
 export interface RuleCategory {
@@ -83,7 +91,9 @@ export interface WebSocketMessage {
     | 'run_completed'
     | 'run_failed'
     | 'issue_found'
-    | 'log_entry';
+    | 'log_entry'
+    | 'file_processed'
+    | 'pattern_detected';
   data: any;
 }
 

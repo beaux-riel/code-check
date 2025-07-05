@@ -84,8 +84,8 @@ importers:
         specifier: workspace:*
         version: link:../shared
       '@prisma/client':
-        specifier: ^5.0.0
-        version: 5.22.0(prisma@6.11.1)
+        specifier: ^6.11.1
+        version: 6.11.1(prisma@6.11.1)(typescript@5.8.3)
       compression:
         specifier: ^1.7.4
         version: 1.8.0
@@ -675,9 +675,6 @@ importers:
       recharts:
         specifier: ^3.0.2
         version: 3.0.2(@types/react@18.3.23)(react-dom@18.3.1)(react-is@19.1.0)(react@18.3.1)(redux@5.0.1)
-      socket.io-client:
-        specifier: ^4.8.1
-        version: 4.8.1
     devDependencies:
       '@playwright/test':
         specifier: ^1.40.0
@@ -3691,6 +3688,23 @@ packages:
         optional: true
     dependencies:
       prisma: 6.11.1(typescript@5.8.3)
+    dev: false
+
+  /@prisma/client@6.11.1(prisma@6.11.1)(typescript@5.8.3):
+    resolution: {integrity: sha512-5CLFh8QP6KxRm83pJ84jaVCeSVPQr8k0L2SEtOJHwdkS57/VQDcI/wQpGmdyOZi+D9gdNabdo8tj1Uk+w+upsQ==}
+    engines: {node: '>=18.18'}
+    requiresBuild: true
+    peerDependencies:
+      prisma: '*'
+      typescript: '>=5.1.0'
+    peerDependenciesMeta:
+      prisma:
+        optional: true
+      typescript:
+        optional: true
+    dependencies:
+      prisma: 6.11.1(typescript@5.8.3)
+      typescript: 5.8.3
     dev: false
 
   /@prisma/config@6.11.1:
