@@ -106,7 +106,7 @@ jobs:
             type=semver,pattern={{major}}
 
       - name: Build and push API backend
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           context: .
           file: ./packages/api-backend/Dockerfile
