@@ -121,7 +121,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload VS Code extension artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: vscode-extension
           path: packages/vscode-extension/*.vsix
@@ -158,7 +158,7 @@ jobs:
         run: pnpm run desktop:dist
 
       - name: Upload desktop artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: desktop-app-${{ matrix.os }}
           path: |
