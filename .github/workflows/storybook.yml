@@ -84,7 +84,7 @@ jobs:
         uses: actions/deploy-pages@v4
 
       - name: Upload Storybook artifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v5
         with:
           name: storybook-static
           path: packages/web-app/storybook-static
